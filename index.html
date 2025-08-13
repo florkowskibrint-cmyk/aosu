@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complete Home Security User Logic</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <style>
+        .tree-line {
+            position: relative;
+        }
+        .tree-line::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            width: 2px;
+            height: 20px;
+            background: #6b7280;
+        }
+        .tree-line-horizontal::after {
+            content: '';
+            position: absolute;
+            top: -20px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: #6b7280;
+        }
+        .defense-gradient {
+            background: linear-gradient(135deg, #065f46, #047857, #059669, #10b981);
+        }
+        .priority-gradient {
+            background: linear-gradient(135deg, #1e40af, #3b82f6, #60a5fa, #93c5fd);
+        }
+        .feature-gradient {
+            background: linear-gradient(135deg,  #93c5fd, #a5d8ff, #cfe8ff, #e6f3ff);
+            color: #1e3a8a;
+        }
+        .priority-gradient-orange {
+           background: linear-gradient(135deg, #f97316, #fb923c, #fdba74, #fed7aa);
+        }
+        .defense-gradient-red {
+        background: linear-gradient(135deg, #dc2626, #ef4444, #f87171, #fecaca);
+        }
+        .chinese-text {
+            font-size: 0.8em;
+            opacity: 0.9;
+            margin-top: 4px;
+        }
+        
+        /* Interactive styles for feature boxes */
+        .expandable-header {
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .expandable-header:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+        .expandable-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        .expandable-content.expanded {
+            max-height: 500px;
+        }
+        .expand-icon {
+            transition: transform 0.3s ease;
+        }
+        .expand-icon.rotated {
+            transform: rotate(180deg);
+        }
+        
+        /* Compact horizontal defense lines */
+        .defense-card-compact {
+            cursor: pointer;
+            transition: all 0.3s ease;
+            min-height: 80px;
+        }
+        .defense-card-compact:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+        .defense-dropdown {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-out, padding 0.3s ease;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 0 0 0.5rem 0.5rem;
+        }
+        .defense-dropdown.expanded {
+            max-height: 2000px;
+            padding: 1.5rem;
+        }
+        .defense-item-box {
+            background: white;
+            border-radius: 0.5rem;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            border-left: 4px solid #3b82f6;
+        }
+        
+        @media print {
+            body { margin: 0; }
+            .no-break { page-break-inside: avoid; }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 p-8">
+    <header class="relative flex items-center mb-12">
+        <!-- Title + Subtitle centered -->
+        <div class="mx-auto text-center">
+            <h1 class="text-4xl font-bold text-gray-800">
+                <i class="fas fa-shield-alt text-blue-600 mr-3"></i>
+                Home Security User Logic
+            </h1>
+            <div class="chinese-text text-lg text-gray-600">家庭安防用户逻辑</div>
+            <p class="text-lg text-gray-600">
+                Security Defense Layers and Features
+            </p>
+            <div class="chinese-text text-gray-500">安防防线层级与功能特性</div>
+        </div>
+</header>
+    <div class="max-w-7xl mx-auto">
+
+        <!-- Compact Four Lines of Defense -->
+        <div class="mb-16 no-break">
+            <h2 class="text-2xl font-bold text-center mb-2 text-gray-800">Four Lines of Defense</h2>
+            <div class="chinese-text text-center mb-8 text-gray-600">四道防线体系</div>
+            <div class="space-y-4 max-w-4xl mx-auto">
+                
+                <!-- 1st Line - Awareness -->
+                <div class="defense-card-compact rounded-lg shadow-lg overflow-hidden" onclick="toggleDefenseDropdown('defense1')">
+                    <div class="priority-gradient text-white p-4 flex items-center space-x-4">
+                        <div class="flex-shrink-0">
+                            <i class="fas fa-eye text-7xl"></i>
+                        </div>
+                        <div class="flex-grow">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <h3 class="font-bold text-lg">1st Line - AWARENESS</h3>
+                                    <div class="chinese-text text-sm">第一道防线 - 感知觉察</div>
+                                    <p class="text-sm mt-1">Perimeter visibility, fences, barriers, lighting</p>
+                                    <div class="chinese-text text-xs">周边可视化、围栏、屏障、照明</div>
+                                </div>
+                                <i class="fas fa-chevron-down expand-icon text-lg ml-4" id="defense1-icon"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="defense-dropdown" id="defense1-content">
+                        <div class="defense-item-box">
+                            <h4 class="font-bold text-gray-800 mb-2">1. Prevention Over Reaction</h4>
+                            <div class="chinese-text font-bold text-gray-700 mb-2">预防胜过反应</div>
+                            <p class="text-sm text-gray-600 mb-2">Criminals often target homes where they see signs of inattentiveness—packages left out, unlocked doors, poor lighting.</p>
+                            <div class="chinese-text text-xs text-gray-500">犯罪分子经常以那些显示疏于防范的住宅为目标——包裹外放、门未上锁、照明不足。</div>
+                            <p class="text-sm text-gray-600 mt-2">Being aware of surroundings, routines, and unusual activity makes it easier to spot potential threats before they escalate.</p>
+                            <div class="chinese-text text-xs text-gray-500">对周围环境、日常例行公事和异常活动保持警觉，有助于在潜在威胁升级之前发现它们。</div>
+                        </div>
+                        
+                        <div class="defense-item-box">
+                            <h4 class="font-bold text-gray-800 mb-2">2. Faster Response Time</h4>
+                            <div class="chinese-text font-bold text-gray-700 mb-2">更快响应时间</div>
+                            <p class="text-sm text-gray-600 mb-2">Awareness means noticing strange vehicles, unfamiliar people, or odd noises right away.</p>
+                            <div class="chinese-text text-xs text-gray-500">警觉意味着立即注意到陌生车辆、不熟悉的人或奇怪的声音。</div>
+                            <p class="text-sm text-gray-600 mt-2">Quick recognition allows for immediate action—calling police, triggering alarms, or locking doors.</p>
+                            <div class="chinese-text text-xs text-gray-500">快速识别能够立即采取行动——报警、触发警报或锁门。</div>
+                        </div>
+                        
+                        <div class="defense-item-box">
+                            <h4 class="font-bold text-gray-800 mb-2">3. Deterrence Effect</h4>
+                            <div class="chinese-text font-bold text-gray-700 mb-2">威慑效果</div>
+                            <p class="text-sm text-gray-600 mb-2">A household that's visibly alert—lights on timers, cameras positioned well, people checking surroundings—signals to would-be intruders that it's not an easy target.</p>
+                            <div class="chinese-text text-xs text-gray-500">一个明显警觉的家庭——定时器控制的灯光、摄像头位置良好、人们检查周围环境——向潜在入侵者发出信号，表明这不是一个容易的目标。</div>
+                            <p class="text-sm text-gray-600 mt-2">Criminals are more likely to bypass homes where residents seem security-conscious.</p>
+                            <div class="chinese-text text-xs text-gray-500">犯罪分子更可能绕过那些居民看起来有安全意识的住宅。</div>
+                        </div>
+                        
+                        <div class="defense-item-box">
+                            <h4 class="font-bold text-gray-800 mb-2">4. Protection of Family & Community</h4>
+                            <div class="chinese-text font-bold text-gray-700 mb-2">保护家庭和社区</div>
+                            <p class="text-sm text-gray-600 mb-2">Awareness isn't just about the home—it extends to children's play areas, neighbors' homes, and community safety.</p>
+                            <div class="chinese-text text-xs text-gray-500">警觉不仅仅关于家庭——它延伸到儿童游乐区、邻居家和社区安全。</div>
+                            <p class="text-sm text-gray-600 mt-2">A vigilant neighborhood can reduce crime rates and create a sense of shared responsibility.</p>
+                            <div class="chinese-text text-xs text-gray-500">一个警觉的社区可以降低犯罪率并创造共同责任感。</div>
+                        </div>
+                        
+                        <div class="defense-item-box">
+                            <h4 class="font-bold text-gray-800 mb-2">5. Adapting to Modern Risks</h4>
+                            <div class="chinese-text font-bold text-gray-700 mb-2">适应现代风险</div>
+                            <p class="text-sm text-gray-600 mb-2">Threats today aren't just break-ins—they include porch piracy, car theft, and scams.</p>
+                            <div class="chinese-text text-xs text-gray-500">今天的威胁不仅仅是入室盗窃——还包括门廊盗窃、汽车盗窃和诈骗。</div>
+                            <p class="text-sm text-gray-600 mt-2">Awareness helps people adapt their habits, use smart tech effectively, and protect deliveries, vehicles, and personal information.</p>
+                            <div class="chinese-text text-xs text-gray-500">警觉有助于人们调整习惯、有效使用智能技术，并保护快递、车辆和个人信息。</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 2nd Line - Notification -->
+                <div class="defense-card-compact rounded-lg shadow-lg overflow-hidden" onclick="toggleDefenseDropdown('defense2')">
+                    <div class="defense-gradient text-white p-4 flex items-center space-x-4">
+                        <div class="flex-shrink-0">
+                            <i class="fas fa-bell text-7xl"></i>
+                        </div>
+                        <div class="flex-grow">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <h3 class="font-bold text-lg">2nd Line - NOTIFICATION</h3>
+                                    <div class="chinese-text text-sm">第二道防线 - 通知预警</div>
+                                    <p class="text-sm mt-1">Activity alerts, motion detection, smart notifications</p>
+                                    <div class="chinese-text text-xs">活动警报、动态检测、智能通知</div>
+                                </div>
+                                <i class="fas fa-chevron-down expand-icon text-lg ml-4" id="defense2-icon"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="defense-dropdown" id="defense2-content">
+                        <div class="defense-item-box">
+                            <h4 class="font-bold text-gray-800 mb-2">1. Immediate Threat Awareness</h4>
+                            <div class="chinese-text font-bold text-gray-700 mb-2">即时威胁意识</div>
+                            <p class="text-sm text-gray-600 mb-2">Notifications bridge the gap between a security event happening and the homeowner knowing about it.</p>
+                            <div class="chinese-text text-xs text-gray-500">通知弥合了安全事件发生与房主了解之间的差距。</div>
+                            <p class="text-sm text-gray-600 mt-2">Even if the first layer (awareness) is missed, alerts instantly draw attention to movement, unusual activity, or a triggered sensor.</p>
+                            <div class="chinese-text text-xs text-gray-500">即使第一层（感知）被遗漏，警报也会立即将注意力吸引到运动、异常活动或触发的传感器上。</div>
+                        </div>
+                        
+                        <div class="defense-item-box">
+                            <h4 class="font-bold text-gray-800 mb-2">2. Action Without Delay</h4>
+                            <div class="chinese-text font-bold text-gray-700 mb-2">立即行动</div>
+                            <p class="text-sm text-gray-600 mb-2">A push alert or siren cue lets the homeowner respond right away—whether that means speaking through a camera, turning on lights, or calling authorities.</p>
+                            <div class="chinese-text text-xs text-gray-500">推送警报或警报器提示让房主可以立即响应——无论是通过摄像头说话、开灯还是报警。</div>
+                            <p class="text-sm text-gray-600 mt-2">This quick reaction can stop an incident before it escalates.</p>
+                            <div class="chinese-text text-xs text-gray-500">这种快速反应可以在事件升级之前阻止它。</div>
+                        </div>
+                        
+                        <div class="defense-item-box">
+                            <h4 class="font-bold text-gray-800 mb-2">3. Extending Protection Beyond the Home</h4>
+                            <div class="chinese-text font-bold text-gray-700 mb-2">将保护延伸到家庭之外</div>
+                            <p class="text-sm text-gray-600 mb-2">Notifications mean you're still "home" even when you're away.</p>
+                            <div class="chinese-text text-xs text-gray-500">通知意味着即使您不在家，您仍然"在家"。</div>
+                            <p class="text-sm text-gray-600 mt-2">Whether you're at work, on vacation, or just in the backyard, alerts keep you connected to what's happening at your property.</p>
+                            <div class="chinese-text text-xs text-gray-500">无论您在工作、度假还是只是在后院，警报都让您与您的财产发生的事情保持联系。</div>
+                        </div>
+                        
+                        <div class="defense-item-box">
+                            <h4 class="font-bold text-gray-800 mb-2">4. Customized to What Matters</h4>
+                            <div class="chinese-text font-bold text-gray-700 mb-2">定制重要事项</div>
+                            <p class="text-sm text-gray-600 mb-2">Smart notifications filter out irrelevant motion, reducing false alarms.</p>
+                            <div class="chinese-text text-xs text-gray-500">智能通知过滤掉无关的运动，减少误报。</div>
+                            <p class="text-sm text-gray-600 mt-2">This ensures that when you do get an alert, it's something worth checking—helping maintain trust in the system.</p>
+                            <div class="chinese-text text-xs text-gray-500">这确保当您收到警报时，这是值得检查的事情——有助于维持对系统的信任。</div>
+                        </div>
+                        
+                        <div class="defense-item-box">
+                            <h4 class="font-bold text-gray-800 mb-2">5. Layered Security Confidence</h4>
+                            <div class="chinese-text font-bold text-gray-700 mb-2">分层安全信心</div>
+                            <p class="text-sm text-gray-600 mb-2">Awareness is the first guardrail, notifications are the second.</p>
+                            <div class="chinese-text text-xs text-gray-500">感知是第一道护栏，通知是第二道。</div>
+                            <p class="text-sm text-gray-600 mt-2">Together, they create a fail-safe: if you don't see something in person, your security system tells you instantly.</p>
+                            <div class="chinese-text text-xs text-gray-500">它们一起创造了一个故障安全机制：如果您亲自没有看到某些东西，您的安全系统会立即告诉您。</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 3rd Line - Intrusion -->
+                <div class="defense-card-compact rounded-lg shadow-lg overflow-hidden" onclick="toggleDefenseDropdown('defense3')">
+                    <div class="defense-gradient text-white p-4 flex items-center space-x-4">
+                        <div class="flex-shrink-0">
+                            <i class="fas fa-exclamation-triangle text-7xl"></i>
+                        </div>
+                        <div class="flex-grow">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <h3 class="font-bold text-lg">3rd Line - INTRUSION</h3>
+                                    <div class="chinese-text text-sm">第三道防线 - 入侵检测</div>
+                                    <p class="text-sm mt-1">Crime detection, deterrence, recording, evidence capture</p>
+                                    <div class="chinese-text text-xs">犯罪检测、威慑、录像、证据收集</div>
+                                </div>
+                                <i class="fas fa-chevron-down expand-icon text-lg ml-4" id="defense3-icon"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="defense-dropdown" id="defense3-content">
+                        <div class="defense-item-box">
+                            <h4 class="font-bold text-gray-800 mb-2">1. The Last Barrier When Prevention Fails</h4>
+                            <div class="chinese-text font-bold text-gray-700 mb-2">预防失败时的最后屏障</div>
+                            <p class="text-sm text-gray-600 mb-2">Even with strong awareness and timely notifications, some threats make it to the intrusion stage.</p>
+                            <div class="chinese-text text-xs text-gray-500">即使有强烈的意识和及时的通知，一些威胁仍会达到入侵阶段。</div>
+                            <p class="text-sm text-gray-600 mt-2">This layer ensures that if a crime attempt happens, it is immediately recognized, challenged, and documented.</p>
+                            <div class="chinese-text text-xs text-gray-500">这一层确保如果发生犯罪企图，它会立即被识别、挑战和记录。</div>
+                        </div>
+                        
+                        <div class="defense-item-box">
+                            <h4 class="font-bold text-gray-800 mb-2">2. Real-Time Crime Detection</h4>
+                            <div class="chinese-text font-bold text-gray-700 mb-2">实时犯罪检测</div>
+                            <p class="text-sm text-gray-600 mb-2">Smart cameras and sensors instantly spot break-ins, trespassing, or vandalism in progress.</p>
+                            <div class="chinese-text text-xs text-gray-500">智能摄像头和传感器立即发现正在进行的入室盗窃、擅自进入或破坏行为。</div>
+                            <p class="text-sm text-gray-600 mt-2">The faster the system detects, the faster it can trigger deterrents or summon help.</p>
+                            <div class="chinese-text text-xs text-gray-500">系统检测得越快，就能越快触发威慑或召唤帮助。</div>
+                        </div>
+                        
+                        <div class="defense-item-box">
+                            <h4 class="font-bold text-gray-800 mb-2">3. Powerful Deterrence in the Moment</h4>
+                            <div class="chinese-text font-bold text-gray-700 mb-2">关键时刻的强大威慑</div>
+                            <p class="text-sm text-gray-600 mb-2">Bright floodlights, loud sirens, and live voice warnings can stop an intruder before the crime is completed.</p>
+                            <div class="chinese-text text-xs text-gray-500">明亮的泛光灯、响亮的警报器和实时语音警告可以在犯罪完成之前阻止入侵者。</div>
+                            <p class="text-sm text-gray-600 mt-2">Criminals prefer easy targets—visible, active defenses can drive them away mid-attempt.</p>
+                            <div class="chinese-text text-xs text-gray-500">犯罪分子偏爱容易的目标——可见的、主动的防御可以在企图中途将他们赶走。</div>
+                        </div>
+                        
+                        <div class="defense-item-box">
+                            <h4 class="font-bold text-gray-800 mb-2">4. Full Recording for Accountability</h4>
+                            <div class="chinese-text font-bold text-gray-700 mb-2">完整记录以确保问责</div>
+                            <p class="text-sm text-gray-600 mb-2">High-definition video and audio ensure that no detail is lost, from the suspect's appearance to the getaway vehicle.</p>
+                            <div class="chinese-text text-xs text-gray-500">高清视频和音频确保不会丢失任何细节，从嫌疑人的外观到逃跑车辆。</div>
+                            <p class="text-sm text-gray-600 mt-2">Continuous or event-triggered recording builds an indisputable timeline of the incident.</p>
+                            <div class="chinese-text text-xs text-gray-500">连续或事件触发的录制建立了事件的无可争议的时间线。</div>
+                        </div>
+                        
+                        <div class="defense-item-box">
+                            <h4 class="font-bold text-gray-800 mb-2">5. Evidence That Holds Up</h4>
+                            <div class="chinese-text font-bold text-gray-700 mb-2">有效的证据</div>
+                            <p class="text-sm text-gray-600 mb-2">Clear, well-documented footage is critical for police investigations and insurance claims.</p>
+                            <div class="chinese-text text-xs text-gray-500">清晰、记录完善的录像对警方调查和保险索赔至关重要。</div>
+                            <p class="text-sm text-gray-600 mt-2">Strong evidence increases arrest rates and helps communities remove repeat offenders.</p>
+                            <div class="chinese-text text-xs text-gray-500">有力的证据提高逮捕率，并帮助社区清除重复犯罪者。</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Last Line - Action -->
+                <div class="defense-card-compact rounded-lg shadow-lg overflow-hidden" onclick="toggleDefenseDropdown('defense4')">
+                    <div class="defense-gradient-red text-white p-4 flex items-center space-x-4">
+                        <div class="flex-shrink-0">
+                            <i class="fas fa-gun text-7xl"></i>
+                        </div>
+                        <div class="flex-grow">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <h3 class="font-bold text-lg">Last Line - ACTION</h3>
+                                    <div class="chinese-text text-sm">最后防线 - 主动防御</div>
+                                    <p class="text-sm mt-1">Emergency response, physical defense, intervention</p>
+                                    <div class="chinese-text text-xs">紧急响应、物理防御、干预行动</div>
+                                </div>
+                                <i class="fas fa-chevron-down expand-icon text-lg ml-4" id="defense4-icon"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="defense-dropdown" id="defense4-content">
+                        <div class="defense-item-box">
+                            <h4 class="font-bold text-gray-800 mb-2">1. Protection When All Else Fails</h4>
+                            <div class="chinese-text font-bold text-gray-700 mb-2">当一切都失败时的保护</div>
+                            <p class="text-sm text-gray-600 mb-2">If awareness, notifications, and intrusion deterrents don't stop the threat, this layer ensures there is still a way to safeguard life and property.</p>
+                            <div class="chinese-text text-xs text-gray-500">如果感知、通知和入侵威慑都无法阻止威胁，这一层确保仍有方法保护生命和财产。</div>
+                            <p class="text-sm text-gray-600 mt-2">It focuses on immediate action, containment, and recovery.</p>
+                            <div class="chinese-text text-xs text-gray-500">它专注于立即行动、遏制和恢复。</div>
+                        </div>
+                        
+                        <div class="defense-item-box">
+                            <h4 class="font-bold text-gray-800 mb-2">2. Emergency Response Activation</h4>
+                            <div class="chinese-text font-bold text-gray-700 mb-2">紧急响应激活</div>
+                            <p class="text-sm text-gray-600 mb-2">Direct connection to emergency services (police, fire, medical) for rapid dispatch.</p>
+                            <div class="chinese-text text-xs text-gray-500">直接连接紧急服务（警察、消防、医疗）以快速派遣。</div>
+                            <p class="text-sm text-gray-600 mt-2">Automated alerts can send critical details—location, type of incident, and live video—to responders.</p>
+                            <div class="chinese-text text-xs text-gray-500">自动警报可以向响应者发送关键细节——位置、事件类型和实时视频。</div>
+                        </div>
+                        
+                        <div class="defense-item-box">
+                            <h4 class="font-bold text-gray-800 mb-2">3. Secure Containment</h4>
+                            <div class="chinese-text font-bold text-gray-700 mb-2">安全遏制</div>
+                            <p class="text-sm text-gray-600 mb-2">Locks, reinforced doors/windows, and safe zones keep family members protected until help arrives.</p>
+                            <div class="chinese-text text-xs text-gray-500">锁具、加固的门窗和安全区域在帮助到达之前保护家庭成员。</div>
+                            <p class="text-sm text-gray-600 mt-2">Can include panic buttons or app-based emergency triggers.</p>
+                            <div class="chinese-text text-xs text-gray-500">可以包括紧急按钮或基于应用程序的紧急触发器。</div>
+                        </div>
+                        
+                        <div class="defense-item-box">
+                            <h4 class="font-bold text-gray-800 mb-2">4. Survival & Safety First</h4>
+                            <div class="chinese-text font-bold text-gray-700 mb-2">生存和安全第一</div>
+                            <p class="text-sm text-gray-600 mb-2">Prioritizes getting family members to safety, whether through evacuation plans, safe rooms, or guided instructions via security systems.</p>
+                            <div class="chinese-text text-xs text-gray-500">优先考虑让家庭成员安全，无论是通过疏散计划、安全房间还是通过安全系统的指导指令。</div>
+                            <p class="text-sm text-gray-600 mt-2">Even if property loss occurs, human safety is preserved.</p>
+                            <div class="chinese-text text-xs text-gray-500">即使发生财产损失，人身安全也得到保护。</div>
+                        </div>
+                        
+                        <div class="defense-item-box">
+                            <h4 class="font-bold text-gray-800 mb-2">5. Recovery & Resolution</h4>
+                            <div class="chinese-text font-bold text-gray-700 mb-2">恢复和解决</div>
+                            <p class="text-sm text-gray-600 mb-2">Post-incident support: insurance documentation, law enforcement coordination, and system analysis to prevent repeat incidents.</p>
+                            <div class="chinese-text text-xs text-gray-500">事后支持：保险文件、执法协调和系统分析以防止重复事件。</div>
+                            <p class="text-sm text-gray-600 mt-2">Ensures that the event is fully resolved and lessons are integrated into the home's security strategy.</p>
+                            <div class="chinese-text text-xs text-gray-500">确保事件得到完全解决，并将经验教训整合到家庭安全战略中。</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main User Priorities -->
+        <div class="mb-12 no-break">
+            <h2 class="text-2xl font-bold text-center mb-2 text-gray-800">Core User Priorities</h2>
+            <div class="chinese-text text-center mb-8 text-gray-600">核心用户需求</div>
+            <div class="grid grid-cols-4 gap-4">
+                <div class="priority-gradient text-white rounded-lg p-6 text-center shadow-lg">
+                    <i class="fas fa-plug text-3xl mb-3"></i>
+                    <h3 class="font-bold text-xl">Simple Installation</h3>
+                    <div class="chinese-text font-bold">简易安装</div>
+                    <p class="text-sm mt-2">Easy setup and deployment</p>
+                    <div class="chinese-text text-sm">轻松设置和部署</div>
+                </div>
+                <div class="priority-gradient text-white rounded-lg p-6 text-center shadow-lg">
+                    <i class="fas fa-video text-3xl mb-3"></i>
+                    <h3 class="font-bold text-xl">Clarity</h3>
+                    <div class="chinese-text font-bold">清晰度</div>
+                    <p class="text-sm mt-2">Clear visual quality</p>
+                    <div class="chinese-text text-sm">清晰的视觉质量</div>
+                </div>
+                <div class="priority-gradient text-white rounded-lg p-6 text-center shadow-lg">
+                    <i class="fas fa-tachometer-alt text-3xl mb-3"></i>
+                    <h3 class="font-bold text-xl">Speed</h3>
+                    <div class="chinese-text font-bold">速度</div>
+                    <p class="text-sm mt-2">Fast response and access</p>
+                    <div class="chinese-text text-sm">快速响应和访问</div>
+                </div>
+                <div class="priority-gradient text-white rounded-lg p-6 text-center shadow-lg">
+                    <i class="fas fa-brain text-3xl mb-3"></i>
+                    <h3 class="font-bold text-xl">Smart Alerts</h3>
+                    <div class="chinese-text font-bold">智能警报</div>
+                    <p class="text-sm mt-2">Intelligent notifications</p>
+                    <div class="chinese-text text-sm">智能通知</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Detailed Feature Tree -->
+        <div class="grid grid-cols-4 gap-3">
+            <!-- Simple Installation Branch -->
+            <div class="no-break">
+                <div class="feature-gradient text-white rounded-lg p-4 mb-6 text-center shadow-md">
+                    <i class="fas fa-tools text-2xl mb-2"></i>
+                    <h4 class="font-bold">Installation Features</h4>
+                    <div class="chinese-text font-bold">安装功能</div>
+                </div>
+                <div class="space-y-4">
+                    <div class="expandable-header bg-white rounded-lg p-4 shadow border-l-4 border-purple-500" onclick="toggleContent('wireless')">
+                        <div class="flex justify-between items-center">
+                            <div>
+                                <h5 class="font-semibold text-gray-800"><i class="fas fa-wifi mr-2"></i>Wireless Setup</h5>
+                                <div class="chinese-text font-semibold text-gray-700">无线设置</div>
+                            </div>
+                            <i class="fas fa-plus expand-icon text-gray-500" id="wireless-icon"></i>
+                        </div>
+                        <div class="expandable-content" id="wireless-content">
+                            <ul class="text-sm text-gray-600 space-y-1 mt-3">
+                                <li>• WiFi connectivity <span class="chinese-text text-gray-500">WiFi连接</span></li>
+                                <li>• Battery powered <span class="chinese-text text-gray-500">电池供电</span></li>
+                                <li>• No wiring required <span class="chinese-text text-gray-500">无需布线</span></li>
+                                <li>• Attached Solar panel <span class="chinese-text text-gray-500">集成太阳能板</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="expandable-header bg-white rounded-lg p-4 shadow border-l-4 border-purple-500" onclick="toggleContent('appsetup')">
+                        <div class="flex justify-between items-center">
+                            <div>
+                                <h5 class="font-semibold text-gray-800"><i class="fas fa-mobile-alt mr-2"></i>App-Based Setup</h5>
+                                <div class="chinese-text font-semibold text-gray-700">应用程序设置</div>
+                            </div>
+                            <i class="fas fa-plus expand-icon text-gray-500" id="appsetup-icon"></i>
+                        </div>
+                        <div class="expandable-content" id="appsetup-content">
+                            <ul class="text-sm text-gray-600 space-y-1 mt-3">
+                                <li>• QR code pairing <span class="chinese-text text-gray-500">二维码配对</span></li>
+                                <li>• Step-by-step guides <span class="chinese-text text-gray-500">分步指导</span></li>
+                                <li>• Auto-discovery <span class="chinese-text text-gray-500">自动发现</span></li>
+                                <li>• Quick and Simple <span class="chinese-text text-gray-500">快速简单</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="expandable-header bg-white rounded-lg p-4 shadow border-l-4 border-purple-500" onclick="toggleContent('mounting')">
+                        <div class="flex justify-between items-center">
+                            <div>
+                                <h5 class="font-semibold text-gray-800"><i class="fas fa-screwdriver mr-2"></i>Mounting Options</h5>
+                                <div class="chinese-text font-semibold text-gray-700">安装选项</div>
+                            </div>
+                            <i class="fas fa-plus expand-icon text-gray-500" id="mounting-icon"></i>
+                        </div>
+                        <div class="expandable-content" id="mounting-content">
+                            <ul class="text-sm text-gray-600 space-y-1 mt-3">
+                                <li>• Drilled in mounts <span class="chinese-text text-gray-500">钻孔安装</span></li>
+                                <li>• Adjustable mounting <span class="chinese-text text-gray-500">可调节安装</span></li>
+                                <li>• Solar Panel Flexibility <span class="chinese-text text-gray-500">太阳能板灵活性</span></li>
+                                <li>• DIY Focus - Fast <span class="chinese-text text-gray-500">DIY专注-快速</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="expandable-header bg-white rounded-lg p-4 shadow border-l-4 border-purple-500" onclick="toggleContent('config')">
+                        <div class="flex justify-between items-center">
+                            <div>
+                                <h5 class="font-semibold text-gray-800"><i class="fas fa-cogs mr-2"></i>Configuration</h5>
+                                <div class="chinese-text font-semibold text-gray-700">配置设置</div>
+                            </div>
+                            <i class="fas fa-plus expand-icon text-gray-500" id="config-icon"></i>
+                        </div>
+                        <div class="expandable-content" id="config-content">
+                            <ul class="text-sm text-gray-600 space-y-1 mt-3">
+                                <li>• Pre-configured settings <span class="chinese-text text-gray-500">预配置设置</span></li>
+                                <li>• Auto-optimization <span class="chinese-text text-gray-500">自动优化</span></li>
+                                <li>• Cloud sync <span class="chinese-text text-gray-500">云端同步</span></li>
+                                <li>• Bulk setup for multiple cameras <span class="chinese-text text-gray-500">多摄像头批量设置</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Clarity Branch -->
+            <div class="no-break">
+                <div class="feature-gradient text-white rounded-lg p-4 mb-6 text-center shadow-md">
+                    <i class="fas fa-eye text-2xl mb-2"></i>
+                    <h4 class="font-bold">Visual Quality</h4>
+                    <div class="chinese-text font-bold">视觉质量</div>
+                </div>
+                <div class="space-y-4">
+                    <div class="expandable-header bg-white rounded-lg p-4 shadow border-l-4 border-blue-500" onclick="toggleContent('resolution')">
+                        <div class="flex justify-between items-center">
+                            <div>
+                                <h5 class="font-semibold text-gray-800"><i class="fas fa-video mr-2"></i>Resolution</h5>
+                                <div class="chinese-text font-semibold text-gray-700">分辨率</div>
+                            </div>
+                            <i class="fas fa-plus expand-icon text-gray-500" id="resolution-icon"></i>
+                        </div>
+                        <div class="expandable-content" id="resolution-content">
+                            <ul class="text-sm text-gray-600 space-y-1 mt-3">
+                                <li>• 4K Ultra HD <span class="chinese-text text-gray-500">4K超高清</span></li>
+                                <li>• Full HD at Night <span class="chinese-text text-gray-500">夜间全高清</span></li>
+                                <li>• Facial and License Plate Clarity <span class="chinese-text text-gray-500">人脸和车牌清晰度</span></li>
+                                <li>• HD Streaming <span class="chinese-text text-gray-500">高清流媒体</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="expandable-header bg-white rounded-lg p-4 shadow border-l-4 border-blue-500" onclick="toggleContent('nightvision')">
+                        <div class="flex justify-between items-center">
+                            <div>
+                                <h5 class="font-semibold text-gray-800"><i class="fas fa-moon mr-2"></i>Night Vision</h5>
+                                <div class="chinese-text font-semibold text-gray-700">夜视功能</div>
+                            </div>
+                            <i class="fas fa-plus expand-icon text-gray-500" id="nightvision-icon"></i>
+                        </div>
+                        <div class="expandable-content" id="nightvision-content">
+                            <ul class="text-sm text-gray-600 space-y-1 mt-3">
+                                <li>• Infrared capability <span class="chinese-text text-gray-500">红外功能</span></li>
+                                <li>• Color night vision <span class="chinese-text text-gray-500">彩色夜视</span></li>
+                                <li>• Enhanced lighting <span class="chinese-text text-gray-500">增强照明</span></li>
+                                <li>• High Quality <span class="chinese-text text-gray-500">高质量</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="expandable-header bg-white rounded-lg p-4 shadow border-l-4 border-blue-500" onclick="toggleContent('fieldview')">
+                        <div class="flex justify-between items-center">
+                            <div>
+                                <h5 class="font-semibold text-gray-800"><i class="fas fa-expand mr-2"></i>Field of View</h5>
+                                <div class="chinese-text font-semibold text-gray-700">视野范围</div>
+                            </div>
+                            <i class="fas fa-plus expand-icon text-gray-500" id="fieldview-icon"></i>
+                        </div>
+                        <div class="expandable-content" id="fieldview-content">
+                            <ul class="text-sm text-gray-600 space-y-1 mt-3">
+                                <li>• Wide-angle lens <span class="chinese-text text-gray-500">广角镜头</span></li>
+                                <li>• Pan/tilt/zoom <span class="chinese-text text-gray-500">云台/变焦</span></li>
+                                <li>• 360-degree coverage <span class="chinese-text text-gray-500">360度覆盖</span></li>
+                                <li>• Digital zoom <span class="chinese-text text-gray-500">数字变焦</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="expandable-header bg-white rounded-lg p-4 shadow border-l-4 border-blue-500" onclick="toggleContent('imageenhancement')">
+                        <div class="flex justify-between items-center">
+                            <div>
+                                <h5 class="font-semibold text-gray-800"><i class="fas fa-adjust mr-2"></i>Image Enhancement</h5>
+                                <div class="chinese-text font-semibold text-gray-700">图像增强</div>
+                            </div>
+                            <i class="fas fa-plus expand-icon text-gray-500" id="imageenhancement-icon"></i>
+                        </div>
+                        <div class="expandable-content" id="imageenhancement-content">
+                            <ul class="text-sm text-gray-600 space-y-1 mt-3">
+                                <li>• HDR imaging <span class="chinese-text text-gray-500">HDR成像</span></li>
+                                <li>• Full Color Night Vision <span class="chinese-text text-gray-500">全彩夜视</span></li>
+                                <li>• Lens correction <span class="chinese-text text-gray-500">镜头校正</span></li>
+                                <li>• Anti-glare <span class="chinese-text text-gray-500">防眩光</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Speed Branch -->
+            <div class="no-break">
+                <div class="feature-gradient text-white rounded-lg p-4 mb-6 text-center shadow-md">
+                    <i class="fas fa-bolt text-2xl mb-2"></i>
+                    <h4 class="font-bold">Performance Speed</h4>
+                    <div class="chinese-text font-bold">性能速度</div>
+                </div>
+                <div class="space-y-4">
+                    <div class="expandable-header bg-white rounded-lg p-4 shadow border-l-4 border-green-500" onclick="toggleContent('livestream')">
+                        <div class="flex justify-between items-center">
+                            <div>
+                                <h5 class="font-semibold text-gray-800"><i class="fas fa-play mr-2"></i>Live Stream</h5>
+                                <div class="chinese-text font-semibold text-gray-700">实时流媒体</div>
+                            </div>
+                            <i class="fas fa-plus expand-icon text-gray-500" id="livestream-icon"></i>
+                        </div>
+                        <div class="expandable-content" id="livestream-content">
+                            <ul class="text-sm text-gray-600 space-y-1 mt-3">
+                                <li>• Instant camera access <span class="chinese-text text-gray-500">即时摄像头访问</span></li>
+                                <li>• Low latency streaming <span class="chinese-text text-gray-500">低延迟流媒体</span></li>
+                                <li>• Quick load times <span class="chinese-text text-gray-500">快速加载时间</span></li>
+                                <li>• Buffering optimization <span class="chinese-text text-gray-500">缓冲优化</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="expandable-header bg-white rounded-lg p-4 shadow border-l-4 border-green-500" onclick="toggleContent('alertresponse')">
+                        <div class="flex justify-between items-center">
+                            <div>
+                                <h5 class="font-semibold text-gray-800"><i class="fas fa-bell mr-2"></i>Alert Response</h5>
+                                <div class="chinese-text font-semibold text-gray-700">警报响应</div>
+                            </div>
+                            <i class="fas fa-plus expand-icon text-gray-500" id="alertresponse-icon"></i>
+                        </div>
+                        <div class="expandable-content" id="alertresponse-content">
+                            <ul class="text-sm text-gray-600 space-y-1 mt-3">
+                                <li>• Real-time notifications <span class="chinese-text text-gray-500">实时通知</span></li>
+                                <li>• Push alert delivery <span class="chinese-text text-gray-500">推送警报传送</span></li>
+                                <li>• Fast motion detection <span class="chinese-text text-gray-500">快速动作检测</span></li>
+                                <li>• Immediate event recognition <span class="chinese-text text-gray-500">即时事件识别</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="expandable-header bg-white rounded-lg p-4 shadow border-l-4 border-green-500" onclick="toggleContent('playback')">
+                        <div class="flex justify-between items-center">
+                            <div>
+                                <h5 class="font-semibold text-gray-800"><i class="fas fa-search mr-2"></i>Playback</h5>
+                                <div class="chinese-text font-semibold text-gray-700">回放功能</div>
+                            </div>
+                            <i class="fas fa-plus expand-icon text-gray-500" id="playback-icon"></i>
+                        </div>
+                        <div class="expandable-content" id="playback-content">
+                            <ul class="text-sm text-gray-600 space-y-1 mt-3">
+                                <li>• Quick timeline scrub <span class="chinese-text text-gray-500">快速时间轴拖拽</span></li>
+                                <li>• Fast forward/rewind <span class="chinese-text text-gray-500">快进/快退</span></li>
+                                <li>• Instant event jumps <span class="chinese-text text-gray-500">即时事件跳转</span></li>
+                                <li>• Smooth & full playback <span class="chinese-text text-gray-500">流畅完整回放</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="expandable-header bg-white rounded-lg p-4 shadow border-l-4 border-green-500" onclick="toggleContent('connectivity')">
+                        <div class="flex justify-between items-center">
+                            <div>
+                                <h5 class="font-semibold text-gray-800"><i class="fas fa-network-wired mr-2"></i>Connectivity</h5>
+                                <div class="chinese-text font-semibold text-gray-700">连接性</div>
+                            </div>
+                            <i class="fas fa-plus expand-icon text-gray-500" id="connectivity-icon"></i>
+                        </div>
+                        <div class="expandable-content" id="connectivity-content">
+                            <ul class="text-sm text-gray-600 space-y-1 mt-3">
+                                <li>• High-speed WiFi & Mobile <span class="chinese-text text-gray-500">高速WiFi和移动网络</span></li>
+                                <li>• Away speed <span class="chinese-text text-gray-500">远程速度</span></li>
+                                <li>• Distance Reliability <span class="chinese-text text-gray-500">距离可靠性</span></li>
+                                <li>• Local processing <span class="chinese-text text-gray-500">本地处理</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Smart Alerts Branch -->
+            <div class="no-break">
+                <div class="feature-gradient text-white rounded-lg p-4 mb-6 text-center shadow-md">
+                    <i class="fas fa-robot text-2xl mb-2"></i>
+                    <h4 class="font-bold">Intelligence Features</h4>
+                    <div class="chinese-text font-bold">智能功能</div>
+                </div>
+                <div class="space-y-4">
+                    <div class="expandable-header bg-white rounded-lg p-4 shadow border-l-4 border-yellow-500" onclick="toggleContent('persondetection')">
+                        <div class="flex justify-between items-center">
+                            <div>
+                                <h5 class="font-semibold text-gray-800"><i class="fas fa-user mr-2"></i>Person Detection</h5>
+                                <div class="chinese-text font-semibold text-gray-700">人员检测</div>
+                            </div>
+                            <i class="fas fa-plus expand-icon text-gray-500" id="persondetection-icon"></i>
+                        </div>
+                        <div class="expandable-content" id="persondetection-content">
+                            <ul class="text-sm text-gray-600 space-y-1 mt-3">
+                                <li>• Person recognition <span class="chinese-text text-gray-500">人员识别</span></li>
+                                <li>• Face ID <span class="chinese-text text-gray-500">人脸识别</span></li>
+                                <li>• Stranger detection <span class="chinese-text text-gray-500">陌生人检测</span></li>
+                                <li>• Delivery person ID <span class="chinese-text text-gray-500">快递员识别</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="expandable-header bg-white rounded-lg p-4 shadow border-l-4 border-yellow-500" onclick="toggleContent('vehicleobject')">
+                        <div class="flex justify-between items-center">
+                            <div>
+                                <h5 class="font-semibold text-gray-800"><i class="fas fa-car mr-2"></i>Vehicle & Object</h5>
+                                <div class="chinese-text font-semibold text-gray-700">车辆和物体</div>
+                            </div>
+                            <i class="fas fa-plus expand-icon text-gray-500" id="vehicleobject-icon"></i>
+                        </div>
+                        <div class="expandable-content" id="vehicleobject-content">
+                            <ul class="text-sm text-gray-600 space-y-1 mt-3">
+                                <li>• Vehicle activity detection <span class="chinese-text text-gray-500">车辆活动检测</span></li>
+                                <li>• Package alerts <span class="chinese-text text-gray-500">包裹警报</span></li>
+                                <li>• Pet recognition <span class="chinese-text text-gray-500">宠物识别</span></li>
+                                <li>• Object left behind/taken <span class="chinese-text text-gray-500">物品遗留/拿取</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="expandable-header bg-white rounded-lg p-4 shadow border-l-4 border-yellow-500" onclick="toggleContent('zonemanagement')">
+                        <div class="flex justify-between items-center">
+                            <div>
+                                <h5 class="font-semibold text-gray-800"><i class="fas fa-map-marked mr-2"></i>Zone Management</h5>
+                                <div class="chinese-text font-semibold text-gray-700">区域管理</div>
+                            </div>
+                            <i class="fas fa-plus expand-icon text-gray-500" id="zonemanagement-icon"></i>
+                        </div>
+                        <div class="expandable-content" id="zonemanagement-content">
+                            <ul class="text-sm text-gray-600 space-y-1 mt-3">
+                                <li>• Custom activity zones <span class="chinese-text text-gray-500">自定义活动区域</span></li>
+                                <li>• Perimeter alerts <span class="chinese-text text-gray-500">周边警报</span></li>
+                                <li>• Privacy masking <span class="chinese-text text-gray-500">隐私遮罩</span></li>
+                                <li>• Sensitivity adjustment <span class="chinese-text text-gray-500">灵敏度调节</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="expandable-header bg-white rounded-lg p-4 shadow border-l-4 border-yellow-500" onclick="toggleContent('smartfiltering')">
+                        <div class="flex justify-between items-center">
+                            <div>
+                                <h5 class="font-semibold text-gray-800"><i class="fas fa-filter mr-2"></i>Smart Filtering</h5>
+                                <div class="chinese-text font-semibold text-gray-700">智能过滤</div>
+                            </div>
+                            <i class="fas fa-plus expand-icon text-gray-500" id="smartfiltering-icon"></i>
+                        </div>
+                        <div class="expandable-content" id="smartfiltering-content">
+                            <ul class="text-sm text-gray-600 space-y-1 mt-3">
+                                <li>• False alert reduction <span class="chinese-text text-gray-500">减少误报</span></li>
+                                <li>• Adjustable to user <span class="chinese-text text-gray-500">用户可调节</span></li>
+                                <li>• Time-based rules <span class="chinese-text text-gray-500">基于时间的规则</span></li>
+                                <li>• Priority notifications <span class="chinese-text text-gray-500">优先通知</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Product Key Points -->
+         <div class="mt-12 mb-12 no-break">
+            <h2 class="text-2xl font-bold text-center mb-2 text-gray-800">aosu Core Abilities</h2>
+            <div class="chinese-text text-center mb-8 text-gray-600">aosu核心能力</div>
+            <div class="grid grid-cols-4 gap-4">
+                <div class="priority-gradient-orange text-white rounded-lg p-6 text-center shadow-lg">
+                    <i class="fas fa-plug text-3xl mb-3"></i>
+                    <h3 class="font-bold text-xl">Simple Installation</h3>
+                    <div class="chinese-text font-bold">简易安装</div>
+                    <p class="text-sm mt-2">Easy setup and deployment</p>
+                    <div class="chinese-text text-sm">轻松设置和部署</div>
+                </div>
+                <div class="priority-gradient-orange text-white rounded-lg p-6 text-center shadow-lg">
+                    <i class="fas fa-sun text-3xl mb-3"></i>
+                    <h3 class="font-bold text-xl">Solar Powered</h3>
+                    <div class="chinese-text font-bold">太阳能供电</div>
+                    <p class="text-sm mt-2">All day, all night power</p>
+                    <div class="chinese-text text-sm">全天候供电</div>
+                </div>
+                <div class="priority-gradient-orange text-white rounded-lg p-6 text-center shadow-lg">
+                    <i class="fas fa-tachometer-alt text-3xl mb-3"></i>
+                    <h3 class="font-bold text-xl">Flexible Storage</h3>
+                    <div class="chinese-text font-bold">灵活存储</div>
+                    <p class="text-sm mt-2">Local or Cloud</p>
+                    <div class="chinese-text text-sm">本地或云端</div>
+                </div>
+                <div class="priority-gradient-orange text-white rounded-lg p-6 text-center shadow-lg">
+                    <i class="fas fa-brain text-3xl mb-3"></i>
+                    <h3 class="font-bold text-xl">AI Powered</h3>
+                    <div class="chinese-text font-bold">AI智能</div>
+                    <p class="text-sm mt-2">Professional-Grade Security</p>
+                    <div class="chinese-text text-sm">专业级安防</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Integration Layer -->
+        <div class="mt-16 no-break">
+            <h2 class="text-2xl font-bold text-center mb-2 text-gray-800">System Integration</h2>
+            <div class="chinese-text text-center mb-8 text-gray-600">系统集成</div>
+            <div class="bg-gradient-to-r from-gray-800 to-gray-600 text-white rounded-lg p-8 shadow-lg">
+                <div class="grid grid-cols-3 gap-8">
+                    <div class="text-center">
+                        <i class="fas fa-cloud text-4xl mb-4"></i>
+                        <h4 class="font-bold text-lg mb-1">Cloud & Storage</h4>
+                        <div class="chinese-text font-bold mb-3">云端和存储</div>
+                        <ul class="text-sm space-y-2">
+                            <li>• Cloud backup <span class="chinese-text text-gray-300">云端备份</span></li>
+                            <li>• Advanced Features <span class="chinese-text text-gray-300">高级功能</span></li>
+                            <li>• Hybrid storage option - Local Storage <span class="chinese-text text-gray-300">混合存储选项-本地存储</span></li>
+                            <li>• Unlimited Storage <span class="chinese-text text-gray-300">无限存储</span></li>
+                        </ul>
+                    </div>
+                    <div class="text-center">
+                        <i class="fas fa-home text-4xl mb-4"></i>
+                        <h4 class="font-bold text-lg mb-1">Smart Home</h4>
+                        <div class="chinese-text font-bold mb-3">智能家居</div>
+                        <ul class="text-sm space-y-2">
+                            <li>• Alexa/Google integration <span class="chinese-text text-gray-300">Alexa/Google集成</span></li>
+                            <li>• Home automation triggers <span class="chinese-text text-gray-300">家庭自动化触发</span></li>
+                            <li>• All Camera access <span class="chinese-text text-gray-300">全摄像头访问</span></li>
+                            <li>• Family Sharing <span class="chinese-text text-gray-300">家庭共享</span></li>
+                        </ul>
+                    </div>
+               
+                    <div class="text-center">
+                        <i class="fas fa-shield-alt text-4xl mb-4"></i>
+                        <h4 class="font-bold text-lg mb-1">AI Integrated Security</h4>
+                        <div class="chinese-text font-bold mb-3">AI集成安防</div>
+                        <ul class="text-sm space-y-2">
+                            <li>• Identity Sense <span class="chinese-text text-gray-300">身份感知</span></li>
+                            <li>• Behavior Analysis <span class="chinese-text text-gray-300">行为分析</span></li>
+                            <li>• Smart Search <span class="chinese-text text-gray-300">智能搜索</span></li>
+                            <li>• Daily Security Report <span class="chinese-text text-gray-300">每日安全报告</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Function to toggle feature content for existing expandable sections
+        function toggleContent(contentId) {
+            const content = document.getElementById(contentId + '-content');
+            const icon = document.getElementById(contentId + '-icon');
+            
+            if (content.classList.contains('expanded')) {
+                content.classList.remove('expanded');
+                icon.classList.remove('rotated');
+                icon.classList.replace('fa-minus', 'fa-plus');
+            } else {
+                content.classList.add('expanded');
+                icon.classList.add('rotated');
+                icon.classList.replace('fa-plus', 'fa-minus');
+            }
+        }
+        
+        // Function to toggle defense line dropdown descriptions
+        function toggleDefenseDropdown(defenseId) {
+            const content = document.getElementById(defenseId + '-content');
+            const icon = document.getElementById(defenseId + '-icon');
+            
+            if (content.classList.contains('expanded')) {
+                content.classList.remove('expanded');
+                icon.classList.remove('rotated');
+            } else {
+                // Close all other defense dropdowns first
+                const allDefenseContents = document.querySelectorAll('.defense-dropdown');
+                const allDefenseIcons = document.querySelectorAll('.defense-card-compact .expand-icon');
+                
+                allDefenseContents.forEach(dropdown => dropdown.classList.remove('expanded'));
+                allDefenseIcons.forEach(iconEl => iconEl.classList.remove('rotated'));
+                
+                // Open the clicked one
+                content.classList.add('expanded');
+                icon.classList.add('rotated');
+            }
+        }
+    </script>
+</body>
+</html>
