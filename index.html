@@ -59,6 +59,18 @@
          .defense-gradient-notification {
             background: linear-gradient(135deg, #047857, #059669, #10b981);
         }
+        .defense-gradient-purple {
+            background: linear-gradient(135deg, #7c3aed, #8b5cf6, #a78bfa);
+        }
+        .defense-gradient-teal {
+            background: linear-gradient(135deg, #0d9488, #14b8a6, #5eead4);
+        }
+        .defense-gradient-indigo {
+            background: linear-gradient(135deg, #4338ca, #6366f1, #818cf8);
+        }
+        .defense-gradient-pink {
+            background: linear-gradient(135deg, #db2777, #ec4899, #f472b6);
+        }
 
         .chinese-text {
             font-size: 0.8em;
@@ -143,6 +155,47 @@
             box-shadow: 0 2px 8px rgba(0,0,0,0.1);
             border-left: 4px solid #f97316;
          }
+         .defense-item-box5 {
+            background: white;
+            border-radius: 0.5rem;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            border-left: 4px solid #7c3aed;
+         }
+         .defense-item-box6 {
+            background: white;
+            border-radius: 0.5rem;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            border-left: 4px solid #0d9488;
+         }
+         .defense-item-box7 {
+            background: white;
+            border-radius: 0.5rem;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            border-left: 4px solid #4338ca;
+         }
+         .defense-item-box8 {
+            background: white;
+            border-radius: 0.5rem;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            border-left: 4px solid #db2777;
+         }
+
+        .scenario-box {
+            background: #f0f4ff;
+            border-radius: 0.375rem;
+            padding: 0.75rem;
+            margin-top: 0.75rem;
+            border-left: 3px solid #3b82f6;
+            font-style: italic;
+        }
     
         @media print {
             body { margin: 0; }
@@ -211,7 +264,7 @@
                         </div>
                         
                         <div class="defense-item-box">
-                            <h4 class="font-bold text-gray-800 mb-2">Deterrence Effect</h4>
+                            <h4 class="font-bold text-gray-800 mb-2">Deterrence Effect - Highlight deterence as seperate Info</h4>
                             <div class="chinese-text font-bold text-gray-700 mb-2">威慑效果</div>
                             <p class="text-sm text-gray-600 mb-2">A household that's visibly alert—lights on timers, cameras positioned well, people checking surroundings—signals to would-be intruders that it's not an easy target.</p>
                             <div class="chinese-text text-xs text-gray-500">一个明显警觉的家庭——定时器控制的灯光、摄像头位置良好、人们检查周围环境——向潜在入侵者发出信号，表明这不是一个容易的目标。</div>
@@ -433,6 +486,230 @@
                             <div class="chinese-text text-xs text-gray-500">事后支持：保险文件、执法协调和系统分析以防止重复事件。</div>
                             <p class="text-sm text-gray-600 mt-2">Ensures that the event is fully resolved and lessons are integrated into the home's security strategy.</p>
                             <div class="chinese-text text-xs text-gray-500">确保事件得到完全解决，并将经验教训整合到家庭安全战略中。</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- NEW SECTION: Layered Home Intrusion Deterrence & Defense -->
+        <div class="mb-16 no-break">
+            <h2 class="text-2xl font-bold text-center mb-2 text-gray-800">Layered Home Intrusion Deterrence & Defense</h2>
+            <div class="chinese-text text-center mb-8 text-gray-600">分层家庭入侵威慑与防御</div>
+            <div class="space-y-4 max-w-6xl mx-auto">
+                
+                <!-- Outer Perimeter -->
+                <div class="defense-card-compact rounded-lg shadow-lg overflow-hidden" onclick="toggleDefenseDropdown('layer1')">
+                    <div class="defense-gradient-purple text-white p-4 flex items-center space-x-4">
+                        <div class="flex-shrink-0">
+                            <i class="fas fa-fence text-5xl"></i>
+                        </div>
+                        <div class="flex-grow">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <h3 class="font-bold text-lg">Outer Perimeter – Deterrence Before Approach</h3>
+                                    <div class="chinese-text text-sm">外围周边 - 接近前威慑</div>
+                                    <p class="text-sm mt-1">Fences, neighborhood watch, decoys, and warning signs</p>
+                                    <div class="chinese-text text-xs">围栏、社区监督、诱饵和警告标志</div>
+                                </div>
+                                <i class="fas fa-chevron-down expand-icon text-lg ml-4" id="layer1-icon"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="defense-dropdown" id="layer1-content">
+                        <div class="defense-item-box5">
+                            <h4 class="font-bold text-gray-800 mb-2"><i class="fas fa-fence mr-2"></i>Fences & Gates</h4>
+                            <div class="chinese-text font-bold text-gray-700 mb-2">围栏和大门</div>
+                            <p class="text-sm text-gray-600 mb-2">Tall fences, locked gates, and privacy barriers make entry harder and signal protection.</p>
+                            <div class="chinese-text text-xs text-gray-500 mb-2">高大的围栏、上锁的大门和隐私屏障使进入更加困难并发出保护信号。</div>
+                            <div class="scenario-box">
+                                <strong>Scenario:</strong> A thief skips the house after seeing a tall locked gate with no easy access.
+                                <div class="chinese-text text-xs mt-1">情景：小偷看到一个没有简易入口的高大上锁大门后跳过了这座房子。</div>
+                            </div>
+                        </div>
+                        
+                        <div class="defense-item-box5">
+                            <h4 class="font-bold text-gray-800 mb-2"><i class="fas fa-users mr-2"></i>Neighborhood Watch & Community Alerts</h4>
+                            <div class="chinese-text font-bold text-gray-700 mb-2">社区监督和社区警报</div>
+                            <p class="text-sm text-gray-600 mb-2">Neighbors monitor suspicious activity and share alerts via apps or meetings.</p>
+                            <div class="chinese-text text-xs text-gray-500 mb-2">邻居监视可疑活动并通过应用程序或会议分享警报。</div>
+                            <div class="scenario-box">
+                                <strong>Scenario:</strong> A neighbor posts a photo of a suspicious vehicle, and multiple residents check their cameras.
+                                <div class="chinese-text text-xs mt-1">情景：邻居发布了一张可疑车辆的照片，多位居民查看了他们的摄像头。</div>
+                            </div>
+                        </div>
+                        
+                        <div class="defense-item-box5">
+                            <h4 class="font-bold text-gray-800 mb-2"><i class="fas fa-sign mr-2"></i>Decoys & Signs</h4>
+                            <div class="chinese-text font-bold text-gray-700 mb-2">诱饵和标志</div>
+                            <p class="text-sm text-gray-600 mb-2">Security company signs, fake cameras, and "beware of dog" notices create perceived risk.</p>
+                            <div class="chinese-text text-xs text-gray-500 mb-2">安全公司标志、假摄像头和"小心恶犬"通知创造了感知风险。</div>
+                            <div class="scenario-box">
+                                <strong>Scenario:</strong> A burglar changes targets after spotting multiple warning signs.
+                                <div class="chinese-text text-xs mt-1">情景：入室盗贼在发现多个警告标志后改变了目标。</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Property Perimeter -->
+                <div class="defense-card-compact rounded-lg shadow-lg overflow-hidden" onclick="toggleDefenseDropdown('layer2')">
+                    <div class="defense-gradient-teal text-white p-4 flex items-center space-x-4">
+                        <div class="flex-shrink-0">
+                            <i class="fas fa-lightbulb text-5xl"></i>
+                        </div>
+                        <div class="flex-grow">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <h3 class="font-bold text-lg">Property Perimeter – Early Warning & Illumination</h3>
+                                    <div class="chinese-text text-sm">物业周边 - 早期预警和照明</div>
+                                    <p class="text-sm mt-1">Motion lighting, sensors, and animal deterrents</p>
+                                    <div class="chinese-text text-xs">运动照明、传感器和动物威慑</div>
+                                </div>
+                                <i class="fas fa-chevron-down expand-icon text-lg ml-4" id="layer2-icon"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="defense-dropdown" id="layer2-content">
+                        <div class="defense-item-box6">
+                            <h4 class="font-bold text-gray-800 mb-2"><i class="fas fa-sun mr-2"></i>Motion-Activated Lighting</h4>
+                            <div class="chinese-text font-bold text-gray-700 mb-2">运动激活照明</div>
+                            <p class="text-sm text-gray-600 mb-2">Floodlights activate on movement, startling and exposing intruders.</p>
+                            <div class="chinese-text text-xs text-gray-500 mb-2">泛光灯在检测到运动时激活，惊吓并暴露入侵者。</div>
+                            <div class="scenario-box">
+                                <strong>Scenario:</strong> Someone creeping along the fence line is suddenly lit up, forcing them to retreat.
+                                <div class="chinese-text text-xs mt-1">情景：沿着围栏线潜行的人突然被照亮，迫使他们撤退。</div>
+                            </div>
+                        </div>
+                        
+                        <div class="defense-item-box6">
+                            <h4 class="font-bold text-gray-800 mb-2"><i class="fas fa-route mr-2"></i>Driveway & Entry Sensors</h4>
+                            <div class="chinese-text font-bold text-gray-700 mb-2">车道和入口传感器</div>
+                            <p class="text-sm text-gray-600 mb-2">Detect vehicles or people entering property before reaching the home.</p>
+                            <div class="chinese-text text-xs text-gray-500 mb-2">在到达房屋之前检测进入物业的车辆或人员。</div>
+                            <div class="scenario-box">
+                                <strong>Scenario:</strong> A sensor alerts a homeowner at 2 AM when someone walks up the driveway.
+                                <div class="chinese-text text-xs mt-1">情景：凌晨2点有人走上车道时，传感器警报房主。</div>
+                            </div>
+                        </div>
+                        
+                        <div class="defense-item-box6">
+                            <h4 class="font-bold text-gray-800 mb-2"><i class="fas fa-dog mr-2"></i>Dogs</h4>
+                            <div class="chinese-text font-bold text-gray-700 mb-2">犬类</div>
+                            <p class="text-sm text-gray-600 mb-2">Barking serves as both alarm and deterrent, warning owners and neighbors.</p>
+                            <div class="chinese-text text-xs text-gray-500 mb-2">吠叫既是警报又是威慑，警告主人和邻居。</div>
+                            <div class="scenario-box">
+                                <strong>Scenario:</strong> The dog's loud barking causes an intruder to abandon their approach.
+                                <div class="chinese-text text-xs mt-1">情景：狗的大声吠叫导致入侵者放弃他们的接近。</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Home Exterior -->
+                <div class="defense-card-compact rounded-lg shadow-lg overflow-hidden" onclick="toggleDefenseDropdown('layer3')">
+                    <div class="defense-gradient-indigo text-white p-4 flex items-center space-x-4">
+                        <div class="flex-shrink-0">
+                            <i class="fas fa-video text-5xl"></i>
+                        </div>
+                        <div class="flex-grow">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <h3 class="font-bold text-lg">Home Exterior – Physical Barriers & Surveillance</h3>
+                                    <div class="chinese-text text-sm">房屋外部 - 物理屏障和监控</div>
+                                    <p class="text-sm mt-1">Cameras, reinforced entry points, and security films</p>
+                                    <div class="chinese-text text-xs">摄像头、加固入口点和安全薄膜</div>
+                                </div>
+                                <i class="fas fa-chevron-down expand-icon text-lg ml-4" id="layer3-icon"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="defense-dropdown" id="layer3-content">
+                        <div class="defense-item-box7">
+                            <h4 class="font-bold text-gray-800 mb-2"><i class="fas fa-camera mr-2"></i>Security Cameras</h4>
+                            <div class="chinese-text font-bold text-gray-700 mb-2">安全摄像头</div>
+                            <p class="text-sm text-gray-600 mb-2">Provide live monitoring, alerts, and recorded evidence.</p>
+                            <div class="chinese-text text-xs text-gray-500 mb-2">提供实时监控、警报和录制证据。</div>
+                            <div class="scenario-box">
+                                <strong>Scenario:</strong> An intruder spots a camera's red recording light and leaves immediately.
+                                <div class="chinese-text text-xs mt-1">情景：入侵者发现摄像头的红色录制灯后立即离开。</div>
+                            </div>
+                        </div>
+                        
+                        <div class="defense-item-box7">
+                            <h4 class="font-bold text-gray-800 mb-2"><i class="fas fa-window-maximize mr-2"></i>Window Films & Privacy Screens</h4>
+                            <div class="chinese-text font-bold text-gray-700 mb-2">窗膜和隐私屏幕</div>
+                            <p class="text-sm text-gray-600 mb-2">Reinforce glass and block inside view.</p>
+                            <div class="chinese-text text-xs text-gray-500 mb-2">加固玻璃并阻止内部视线。</div>
+                            <div class="scenario-box">
+                                <strong>Scenario:</strong> A burglar tries to smash a window, but the film holds, preventing quick access.
+                                <div class="chinese-text text-xs mt-1">情景：入室盗贼试图砸碎窗户，但薄膜保持完整，阻止了快速进入。</div>
+                            </div>
+                        </div>
+                        
+                        <div class="defense-item-box7">
+                            <h4 class="font-bold text-gray-800 mb-2"><i class="fas fa-door-closed mr-2"></i>Reinforced Doors & Windows</h4>
+                            <div class="chinese-text font-bold text-gray-700 mb-2">加固门窗</div>
+                            <p class="text-sm text-gray-600 mb-2">Heavy-duty deadbolts, strike plates, and shatter-resistant glass stop forced entry.</p>
+                            <div class="chinese-text text-xs text-gray-500 mb-2">重型防盗锁、撞击板和抗碎玻璃阻止强行进入。</div>
+                            <div class="scenario-box">
+                                <strong>Scenario:</strong> An intruder kicks the door repeatedly but can't break through.
+                                <div class="chinese-text text-xs mt-1">情景：入侵者反复踢门但无法突破。</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Interior -->
+                <div class="defense-card-compact rounded-lg shadow-lg overflow-hidden" onclick="toggleDefenseDropdown('layer4')">
+                    <div class="defense-gradient-pink text-white p-4 flex items-center space-x-4">
+                        <div class="flex-shrink-0">
+                            <i class="fas fa-home text-5xl"></i>
+                        </div>
+                        <div class="flex-grow">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <h3 class="font-bold text-lg">Interior – Active Response & Containment</h3>
+                                    <div class="chinese-text text-sm">室内 - 主动响应和遏制</div>
+                                    <p class="text-sm mt-1">Alarm systems, smart locks, and final defensive measures</p>
+                                    <div class="chinese-text text-xs">警报系统、智能锁和最终防御措施</div>
+                                </div>
+                                <i class="fas fa-chevron-down expand-icon text-lg ml-4" id="layer4-icon"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="defense-dropdown" id="layer4-content">
+                        <div class="defense-item-box8">
+                            <h4 class="font-bold text-gray-800 mb-2"><i class="fas fa-bell mr-2"></i>Alarm Systems</h4>
+                            <div class="chinese-text font-bold text-gray-700 mb-2">警报系统</div>
+                            <p class="text-sm text-gray-600 mb-2">Sensors and sirens alert owners and authorities to intrusion.</p>
+                            <div class="chinese-text text-xs text-gray-500 mb-2">传感器和警报器向业主和当局警报入侵。</div>
+                            <div class="scenario-box">
+                                <strong>Scenario:</strong> A back door sensor triggers a blaring alarm, and police are dispatched.
+                                <div class="chinese-text text-xs mt-1">情景：后门传感器触发刺耳警报，警察被派遣。</div>
+                            </div>
+                        </div>
+                        
+                        <div class="defense-item-box8">
+                            <h4 class="font-bold text-gray-800 mb-2"><i class="fas fa-lock mr-2"></i>Smart Locks</h4>
+                            <div class="chinese-text font-bold text-gray-700 mb-2">智能锁</div>
+                            <p class="text-sm text-gray-600 mb-2">Keyless systems with PIN codes, biometrics, or app control prevent lock tampering.</p>
+                            <div class="chinese-text text-xs text-gray-500 mb-2">带PIN码、生物识别或应用控制的无钥匙系统防止锁具篡改。</div>
+                            <div class="scenario-box">
+                                <strong>Scenario:</strong> The system alerts the homeowner when someone attempts multiple wrong codes.
+                                <div class="chinese-text text-xs mt-1">情景：当有人尝试多次错误密码时，系统警报房主。</div>
+                            </div>
+                        </div>
+                        
+                        <div class="defense-item-box8">
+                            <h4 class="font-bold text-gray-800 mb-2"><i class="fas fa-shield-alt mr-2"></i>Firearms (in gun-owning households)</h4>
+                            <div class="chinese-text font-bold text-gray-700 mb-2">枪支（在拥有枪支的家庭中）</div>
+                            <p class="text-sm text-gray-600 mb-2">Used as a final defensive option where legal and trained.</p>
+                            <div class="chinese-text text-xs text-gray-500 mb-2">在合法和受过训练的情况下作为最终防御选项使用。</div>
+                            <div class="scenario-box">
+                                <strong>Scenario:</strong> A homeowner calls 911 and secures their family while armed until help arrives.
+                                <div class="chinese-text text-xs mt-1">情景：房主报警911并在武装状态下保护家人直到帮助到达。</div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -955,4 +1232,5 @@
     </script>
 </body>
 </html>
+
 
