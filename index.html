@@ -59,8 +59,17 @@
          .defense-gradient-notification {
             background: linear-gradient(135deg, #047857, #059669, #10b981);
         }
-        .defense-gradient-purple {
-            background: linear-gradient(135deg, #7c3aed, #8b5cf6, #a78bfa);
+        .defense-gradient-purple1 {
+            background: linear-gradient(135deg, #b7a2f7);
+        }
+        .defense-gradient-purple2 {
+            background: linear-gradient(135deg, #9369f3);
+        }
+        .defense-gradient-purple3 {
+            background: linear-gradient(135deg, #8247e7);
+        }
+        .defense-gradient-purple4 {
+            background: linear-gradient(135deg, #6218e0);
         }
         .defense-gradient-teal {
             background: linear-gradient(135deg, #0d9488, #14b8a6, #5eead4);
@@ -187,13 +196,52 @@
             box-shadow: 0 2px 8px rgba(0,0,0,0.1);
             border-left: 4px solid #db2777;
          }
+         .defense-item-box9 {
+            background: white;
+            border-radius: 0.5rem;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            border-left: 4px solid #575556;
+         }
 
         .scenario-box {
             background: #f0f4ff;
             border-radius: 0.375rem;
             padding: 0.75rem;
             margin-top: 0.75rem;
-            border-left: 3px solid #3b82f6;
+            font-style: italic;
+        }
+
+        .scenario-box2 {
+            background: #f0fff4;
+            border-radius: 0.375rem;
+            padding: 0.75rem;
+            margin-top: 0.75rem;
+            font-style: italic;
+        }
+
+        .scenario-box3 {
+            background: #fff8f0;
+            border-radius: 0.375rem;
+            padding: 0.75rem;
+            margin-top: 0.75rem;
+            font-style: italic;
+        }
+
+        .scenario-box4 {
+            background: #fff0f0;
+            border-radius: 0.375rem;
+            padding: 0.75rem;
+            margin-top: 0.75rem;
+            font-style: italic;
+        }
+
+        .scenario-box5 {
+            background: #f5f0ff;
+            border-radius: 0.375rem;
+            padding: 0.75rem;
+            margin-top: 0.75rem;
             font-style: italic;
         }
 
@@ -233,7 +281,9 @@
         }
 
         .popup-header {
+            background: #3b82f6;
             padding: 1.5rem 1.5rem 1rem 1.5rem;
+            -webkit-text-fill-color: white;
             border-bottom: 1px solid #e5e7eb;
             display: flex;
             justify-content: space-between;
@@ -248,7 +298,7 @@
             background: none;
             border: none;
             font-size: 1.5rem;
-            color: #6b7280;
+            color: black;
             cursor: pointer;
             padding: 0.25rem;
             border-radius: 0.25rem;
@@ -257,7 +307,7 @@
 
         .popup-close:hover {
             background: #f3f4f6;
-            color: #374151;
+            color: black;
         }
 
         /* Security feature boxes */
@@ -313,7 +363,7 @@
         <!-- Compact Four Lines of Defense -->
         <div class="mb-16 no-break">
             <h2 class="text-2xl font-bold text-center mb-2 text-gray-800">Four Lines of Defense</h2>
-            <div class="chinese-text text-center mb-8 text-gray-600">四道防线体系</div>
+            <div class="chinese-text text-center mb-8 text-gray-600">美国家庭的四道防线体系</div>
             <div class="space-y-4 max-w-4xl mx-auto">
                 
                 <!-- 1st Line - Awareness -->
@@ -323,64 +373,98 @@
                             <i class="fas fa-eye text-7xl"></i>
                         </div>
                         <div class="flex-grow">
-                            <div class="flex items-center justify-between">
-                                <div>
-                                    <h3 class="font-bold text-lg">1st Line - AWARENESS</h3>
-                                    <div class="chinese-text text-sm">第一道防线 - 感知觉察</div>
-                                    <p class="text-sm mt-1">Perimeter visibility, fences, barriers, lighting</p>
-                                    <div class="chinese-text text-xs">周边可视化、围栏、屏障、照明</div>
-                                </div>
-                                <i class="fas fa-chevron-down expand-icon text-lg ml-4" id="defense1-icon"></i>
-                            </div>
-                        </div>
+    <div class="flex items-center justify-between">
+                    <div>
+                        <h3 class="font-bold text-lg">1st Line - AWARENESS</h3>
+                        <div class="chinese-text text-sm">第一道防线 - 感知觉察</div>
+                        <p class="text-sm mt-1">Perimeter visibility, fences, barriers, lighting</p>
+                        <div class="chinese-text text-xs">周边可视化、围栏、屏障、照明</div>
                     </div>
-                    <div class="defense-dropdown" id="defense1-content">
-                        <div class="defense-item-box">
-                            <h4 class="font-bold text-gray-800 mb-2">Prevention Over Reaction</h4>
-                            <div class="chinese-text font-bold text-gray-700 mb-2">预防胜过反应</div>
-                            <p class="text-sm text-gray-600 mb-2">Criminals often target homes where they see signs of inattentiveness—packages left out, unlocked doors, poor lighting.</p>
-                            <div class="chinese-text text-xs text-gray-500">犯罪分子经常以那些显示疏于防范的住宅为目标——包裹外放、门未上锁、照明不足。</div>
-                            <p class="text-sm text-gray-600 mt-2">Being aware of surroundings, routines, and unusual activity makes it easier to spot potential threats before they escalate.</p>
-                            <div class="chinese-text text-xs text-gray-500">对周围环境、日常例行公事和异常活动保持警觉，有助于在潜在威胁升级之前发现它们。</div>
-                        </div>
-                        
-                        <div class="defense-item-box">
-                            <h4 class="font-bold text-gray-800 mb-2">Faster Response Time</h4>
-                            <div class="chinese-text font-bold text-gray-700 mb-2">更快响应时间</div>
-                            <p class="text-sm text-gray-600 mb-2">Awareness means noticing strange vehicles, unfamiliar people, or odd noises right away.</p>
-                            <div class="chinese-text text-xs text-gray-500">警觉意味着立即注意到陌生车辆、不熟悉的人或奇怪的声音。</div>
-                            <p class="text-sm text-gray-600 mt-2">Quick recognition allows for immediate action—calling police, triggering alarms, or locking doors.</p>
-                            <div class="chinese-text text-xs text-gray-500">快速识别能够立即采取行动——报警、触发警报或锁门。</div>
-                        </div>
-                        
-                        <div class="defense-item-box">
-                            <h4 class="font-bold text-gray-800 mb-2">Deterrence Effect</h4>
-                            <div class="chinese-text font-bold text-gray-700 mb-2">威慑效果</div>
-                            <p class="text-sm text-gray-600 mb-2">A household that's visibly alert—lights on timers, cameras positioned well, people checking surroundings—signals to would-be intruders that it's not an easy target.</p>
-                            <div class="chinese-text text-xs text-gray-500">一个明显警觉的家庭——定时器控制的灯光、摄像头位置良好、人们检查周围环境——向潜在入侵者发出信号，表明这不是一个容易的目标。</div>
-                            <p class="text-sm text-gray-600 mt-2">Criminals are more likely to bypass homes where residents seem security-conscious.</p>
-                            <div class="chinese-text text-xs text-gray-500">犯罪分子更可能绕过那些居民看起来有安全意识的住宅。</div>
-                        </div>
-                        
-                        <div class="defense-item-box">
-                            <h4 class="font-bold text-gray-800 mb-2">Protection of Family & Community</h4>
-                            <div class="chinese-text font-bold text-gray-700 mb-2">保护家庭和社区</div>
-                            <p class="text-sm text-gray-600 mb-2">Awareness isn't just about the home—it extends to children's play areas, neighbors' homes, and community safety.</p>
-                            <div class="chinese-text text-xs text-gray-500">警觉不仅仅关于家庭——它延伸到儿童游乐区、邻居家和社区安全。</div>
-                            <p class="text-sm text-gray-600 mt-2">A vigilant neighborhood can reduce crime rates and create a sense of shared responsibility.</p>
-                            <div class="chinese-text text-xs text-gray-500">一个警觉的社区可以降低犯罪率并创造共同责任感。</div>
-                        </div>
-                        
-                        <div class="defense-item-box">
-                            <h4 class="font-bold text-gray-800 mb-2">Adapting to Modern Risks</h4>
-                            <div class="chinese-text font-bold text-gray-700 mb-2">适应现代风险</div>
-                            <p class="text-sm text-gray-600 mb-2">Threats today aren't just break-ins—they include porch piracy, car theft, and scams.</p>
-                            <div class="chinese-text text-xs text-gray-500">今天的威胁不仅仅是入室盗窃——还包括门廊盗窃、汽车盗窃和诈骗。</div>
-                            <p class="text-sm text-gray-600 mt-2">Awareness helps people adapt their habits, use smart tech effectively, and protect deliveries, vehicles, and personal information.</p>
-                            <div class="chinese-text text-xs text-gray-500">警觉有助于人们调整习惯、有效使用智能技术，并保护快递、车辆和个人信息。</div>
-                        </div>
+                    <i class="fas fa-chevron-down expand-icon text-lg ml-4" id="defense1-icon"></i>
+                </div>
+            </div>
+            </div>
+            <div class="defense-dropdown" id="defense1-content">
+                <div class="defense-item-box">
+                    <h4 class="font-bold text-gray-800 mb-2">Prevention Over Reaction</h4>
+                    <div class="chinese-text font-bold text-gray-700 mb-2">预防胜过反应</div>
+                    <p class="text-sm text-gray-600 mb-2">Criminals often target homes where they see signs of inattentiveness—packages left out, unlocked doors, poor lighting.</p>
+                    <div class="chinese-text text-xs text-gray-500">犯罪分子经常以那些显示疏于防范的住宅为目标——包裹外放、门未上锁、照明不足。</div>
+                    <p class="text-sm text-gray-600 mt-2">Being aware of surroundings, routines, and unusual activity makes it easier to spot potential threats before they escalate.</p>
+                    <div class="chinese-text text-xs text-gray-500">对周围环境、日常例行公事和异常活动保持警觉，有助于在潜在威胁升级之前发现它们。</div>
+                    <div class="scenario-box">
+                        <strong>Scenario:</strong> Preventing incidents is part of being a responsible home owner, being aware of your homes surroundings at any time allows you to assess and quickly adapt to any situation.
+                        <div class="chinese-text text-xs mt-1">情景：预防事故是负责任房主的一部分，随时了解家庭周围环境可以让您评估并快速适应任何情况。</div>
                     </div>
                 </div>
+
+                <div class="defense-item-box">
+                    <h4 class="font-bold text-gray-800 mb-2">Situational Awareness</h4>
+                    <div class="chinese-text font-bold text-gray-700 mb-2">情境感知</div>
+                    <p class="text-sm text-gray-600 mb-2"> This is an inherit advantage that people use in their daily lives, some better than others. .</p>
+                    <div class="chinese-text text-xs text-gray-500">这是人们在日常生活中使用的固有优势，有些人比其他人做得更好。</div>
+                    <p class="text-sm text-gray-600 mt-2">Coming home from being away is when you may notice something is unuasual, which could warrant an investigation.</p>
+                    <div class="chinese-text text-xs text-gray-500">外出回家时可能会注意到异常情况，这可能需要调查。</div>
+                    <div class="scenario-box">
+                        <strong>Scenario:</strong> You come home and see the door is slightly open, or a light is on that previously wasn't, these types of indicators can cause someone to be "on edge" until a conclusion is made.
+                        <div class="chinese-text text-xs mt-1">情景：您回家看到门微微开着，或者之前没有开的灯亮着，这些指标会让人"紧张"，直到得出结论。</div>
+                    </div>
+                </div>
+                
+                <div class="defense-item-box">
+                    <h4 class="font-bold text-gray-800 mb-2">Faster Response Time</h4>
+                    <div class="chinese-text font-bold text-gray-700 mb-2">更快响应时间</div>
+                    <p class="text-sm text-gray-600 mb-2">Awareness means noticing strange vehicles, unfamiliar people, or odd noises right away.</p>
+                    <div class="chinese-text text-xs text-gray-500">警觉意味着立即注意到陌生车辆、不熟悉的人或奇怪的声音。</div>
+                    <p class="text-sm text-gray-600 mt-2">Quick recognition allows for immediate action—calling police, triggering alarms, or locking doors.</p>
+                    <div class="chinese-text text-xs text-gray-500">快速识别能够立即采取行动——报警、触发警报或锁门。</div>
+                    <div class="scenario-box">
+                        <strong>Scenario:</strong> Someone sitting outside in their car for an extended amount of time can cause concern, some people may even notify the police.
+                        <div class="chinese-text text-xs mt-1">情景：有人在车里长时间坐在外面会引起担忧，有些人甚至可能通知警察。</div>
+                    </div>
+                </div>
+                
+                <div class="defense-item-box">
+                    <h4 class="font-bold text-gray-800 mb-2">Visible & Audible Deterrence Effect </h4>
+                    <div class="chinese-text font-bold text-gray-700 mb-2">可见和听觉威慑效果</div>
+                    <p class="text-sm text-gray-600 mb-2">A household that's visibly alert—lights on timers, dog barking, cameras positioned well, signs, people checking surroundings—signals to would-be intruders that it's not an easy target.</p>
+                    <div class="chinese-text text-xs text-gray-500">一个明显警觉的家庭——定时器控制的灯光、狗叫声、摄像头位置良好、标志、人们检查周围环境——向潜在入侵者发出信号，表明这不是一个容易的目标。</div>
+                    <p class="text-sm text-gray-600 mt-2">Criminals are more likely to bypass homes where residents seem security-conscious.</p>
+                    <div class="chinese-text text-xs text-gray-500">犯罪分子更可能绕过那些居民看起来有安全意识的住宅。</div>
+                    <div class="scenario-box">
+                        <strong>Scenario:</strong> Most criminals will avoid homes that "appear" more secure with these added measures, some homeowner may even have a sign "gun on premise".
+                        <div class="chinese-text text-xs mt-1">情景：大多数罪犯会避开那些通过这些额外措施"看起来"更安全的房屋，一些房主甚至可能有"房内有枪"的标志。</div>
+                    </div>
+                </div>
+                
+                <div class="defense-item-box">
+                    <h4 class="font-bold text-gray-800 mb-2">Protection of Family & Community</h4>
+                    <div class="chinese-text font-bold text-gray-700 mb-2">保护家庭和社区</div>
+                    <p class="text-sm text-gray-600 mb-2">Awareness isn't just about the home—it extends to children's play areas, neighbors' homes, and community safety.</p>
+                    <div class="chinese-text text-xs text-gray-500">警觉不仅仅关于家庭——它延伸到儿童游乐区、邻居家和社区安全。</div>
+                    <p class="text-sm text-gray-600 mt-2">A vigilant neighborhood can reduce crime rates and create a sense of shared responsibility.</p>
+                    <div class="chinese-text text-xs text-gray-500">一个警觉的社区可以降低犯罪率并创造共同责任感。</div>
+                    <div class="scenario-box">
+                        <strong>Scenario:</strong> Informing your neighbors is a way to keep aware of what has been happening nearby, some neighbors will be more vigilant than others and may feel a sense of responsibility to "watch over" suspicious activities. "Neighborhood Watches" are relatively common.
+                        <div class="chinese-text text-xs mt-1">情景：通知邻居是了解附近发生的事情的一种方式，一些邻居会比其他邻居更警觉，可能会感到有责任"监视"可疑活动。"邻里守望"相对常见。</div>
+                    </div>
+                </div>
+                
+                <div class="defense-item-box">
+                    <h4 class="font-bold text-gray-800 mb-2">Adapting to Modern Risks</h4>
+                    <div class="chinese-text font-bold text-gray-700 mb-2">适应现代风险</div>
+                    <p class="text-sm text-gray-600 mb-2">Threats today aren't just break-ins—they include porch piracy, car theft, and scams.</p>
+                    <div class="chinese-text text-xs text-gray-500">今天的威胁不仅仅是入室盗窃——还包括门廊盗窃、汽车盗窃和诈骗。</div>
+                    <p class="text-sm text-gray-600 mt-2">Awareness helps people adapt their habits, use smart tech effectively, and protect deliveries, vehicles, and personal information.</p>
+                    <div class="chinese-text text-xs text-gray-500">警觉有助于人们调整习惯、有效使用智能技术，并保护快递、车辆和个人信息。</div>
+                    <div class="scenario-box">
+                        <strong>Scenario:</strong> Depending on the income level, knowing what latest tech is available is appealing so that you can optimize your own home to adapt to a dynamcally changing neighborhood.
+                        <div class="chinese-text text-xs mt-1">情景：根据收入水平，了解最新可用技术是有吸引力的，这样您就可以优化自己的家庭以适应动态变化的社区。</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
                 
                 <!-- 2nd Line - Notification -->
                 <div class="defense-card-compact rounded-lg shadow-lg overflow-hidden" onclick="toggleDefenseDropdown('defense2')">
@@ -404,11 +488,16 @@
                         <div class="defense-item-box2">
                             <h4 class="font-bold text-gray-800 mb-2">Immediate Threat Awareness</h4>
                             <div class="chinese-text font-bold text-gray-700 mb-2">即时威胁意识</div>
-                            <p class="text-sm text-gray-600 mb-2">Notifications bridge the gap between a security event happening and the homeowner knowing about it.</p>
+                            <p class="text-sm text-gray-600 mb-2">Notifications bridge the gap between an event happening and the homeowner knowing about it.</p>
                             <div class="chinese-text text-xs text-gray-500">通知弥合了安全事件发生与房主了解之间的差距。</div>
                             <p class="text-sm text-gray-600 mt-2">Even if the first layer (awareness) is missed, alerts instantly draw attention to movement, unusual activity, or a triggered sensor.</p>
                             <div class="chinese-text text-xs text-gray-500">即使第一层（感知）被遗漏，警报也会立即将注意力吸引到运动、异常活动或触发的传感器上。</div>
+                            <div class="scenario-box2">
+                                <strong>Scenario:</strong> "You can't be everywhere at once" is a common English saying. But if something unusual outside your property is happenining, you want to know what it is. A dog bark to a motion light activating, you become instantly curious what triggered it. 
+                                <div class="chinese-text text-xs mt-1">情景："你不能同时出现在所有地方"是一个常见的英语说法。但如果你的房产外发生了不寻常的事情，你想知道那是什么。从狗叫到运动灯激活，你会立即好奇是什么触发了它。</div>
+                            </div>
                         </div>
+                        
                         
                         <div class="defense-item-box2">
                             <h4 class="font-bold text-gray-800 mb-2">Action Without Delay</h4>
@@ -417,6 +506,10 @@
                             <div class="chinese-text text-xs text-gray-500">推送警报或警报器提示让房主可以立即响应——无论是通过摄像头说话、开灯还是报警。</div>
                             <p class="text-sm text-gray-600 mt-2">This quick reaction can stop an incident before it escalates.</p>
                             <div class="chinese-text text-xs text-gray-500">这种快速反应可以在事件升级之前阻止它。</div>
+                            <div class="scenario-box2">
+                                <strong>Scenario:</strong> There is a sense of responsibility for you to take action on situations around your home, for an average person, an alert requires personal investigation, and a response. From raccoons in the trash to someone breaking into your car, you rely on knowing in order to take action.
+                                <div class="chinese-text text-xs mt-1">情景：你有责任对家周围的情况采取行动，对于普通人来说，警报需要个人调查和响应。从浣熊翻垃圾到有人破坏你的车，你依靠了解情况才能采取行动。</div>
+                            </div>
                         </div>
                         
                         <div class="defense-item-box2">
@@ -426,6 +519,10 @@
                             <div class="chinese-text text-xs text-gray-500">通知意味着即使您不在家，您仍然"在家"。</div>
                             <p class="text-sm text-gray-600 mt-2">Whether you're at work, on vacation, or just in the backyard, alerts keep you connected to what's happening at your property.</p>
                             <div class="chinese-text text-xs text-gray-500">无论您在工作、度假还是只是在后院，警报都让您与您的财产发生的事情保持联系。</div>
+                            <div class="scenario-box2">
+                                <strong>Scenario:</strong> Going to the store, a resturant, visiting a family or friends home, going on vacation there are multiple instances when you are not home, you might be waiting for a package delivery or possibly someone to check your home, you still want to know what's going one around your personal belongings.
+                                <div class="chinese-text text-xs mt-1">情景：去商店、餐厅、拜访家人或朋友的家、度假，有很多时候你不在家，你可能在等包裹递送或可能有人来检查你的家，你仍然想知道你的个人物品周围发生了什么。</div>
+                            </div>
                         </div>
                         
                         <div class="defense-item-box2">
@@ -435,6 +532,12 @@
                             <div class="chinese-text text-xs text-gray-500">智能通知过滤掉无关的运动，减少误报。</div>
                             <p class="text-sm text-gray-600 mt-2">This ensures that when you do get an alert, it's something worth checking—helping maintain trust in the system.</p>
                             <div class="chinese-text text-xs text-gray-500">这确保当您收到警报时，这是值得检查的事情——有助于维持对系统的信任。</div>
+                            <p class="text-sm text-gray-600 mt-2">NOTE: Every security set up is "custom" to a persons needs and home, especially for DIY.</p>
+                            <div class="chinese-text text-xs text-gray-500">注意：每个安全设置都是根据个人需求和家庭"定制"的，特别是对于DIY。</div>
+                            <div class="scenario-box2">
+                                <strong>Scenario:</strong> "The Boy Who Cried Wolf" is another common saying, if a measure of security is constantly misinforming it will be disregarded. Some people even have issues with their dogs being too senstive which can be annoying.
+                                <div class="chinese-text text-xs mt-1">情景："狼来了"是另一个常见的说法，如果安全措施不断提供错误信息，它将被忽视。有些人甚至遇到他们的狗太敏感的问题，这可能很烦人。</div>
+                            </div>
                         </div>
                         
                         <div class="defense-item-box2">
@@ -442,8 +545,12 @@
                             <div class="chinese-text font-bold text-gray-700 mb-2">分层安全信心</div>
                             <p class="text-sm text-gray-600 mb-2">Awareness is the first guardrail, notifications are the second.</p>
                             <div class="chinese-text text-xs text-gray-500">感知是第一道护栏，通知是第二道。</div>
-                            <p class="text-sm text-gray-600 mt-2">Together, they create a fail-safe: if you don't see something in person, your security system tells you instantly.</p>
-                            <div class="chinese-text text-xs text-gray-500">它们一起创造了一个故障安全机制：如果您亲自没有看到某些东西，您的安全系统会立即告诉您。</div>
+                            <p class="text-sm text-gray-600 mt-2">Together, they create a fail-safe: if you don't see something in person, you rely on your security setup to tell you instantly.</p>
+                            <div class="chinese-text text-xs text-gray-500">它们一起创造了一个故障安全机制：如果您亲自没有看到某些东西，您依靠安全系统立即告诉您。</div>
+                            <div class="scenario-box2">
+                                <strong>Scenario:</strong> The dog is part of your family, if it is acting weird or barking, this is a strong indicator that something is wrong for most people.
+                                <div class="chinese-text text-xs mt-1">情景：狗是你家庭的一部分，如果它行为异常或吠叫，对大多数人来说这是出了问题的强烈信号。</div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -474,6 +581,10 @@
                             <div class="chinese-text text-xs text-gray-500">即使有强烈的意识和及时的通知，一些威胁仍会达到入侵阶段。</div>
                             <p class="text-sm text-gray-600 mt-2">This layer ensures that if a crime attempt happens, it is immediately recognized, challenged, and documented.</p>
                             <div class="chinese-text text-xs text-gray-500">这一层确保如果发生犯罪企图，它会立即被识别、挑战和记录。</div>
+                        <div class="scenario-box3">
+                                <strong>Scenario:</strong> A car being broken into, mischevious neighbors, dangerous animals, a package stolen, a robbery, or vandalism, these can be a major violation for people and it can even be traumatic for most, this is why the first 2 lines of defense are valued so highly as a homeowner.
+                                <div class="chinese-text text-xs mt-1">情景：汽车被破坏、恶作剧邻居、危险动物、包裹被盗、抢劫或破坏行为，这些对人们来说可能是重大侵犯，甚至对大多数人来说可能是创伤性的，这就是为什么作为房主如此重视前两道防线的原因。</div>
+                            </div>
                         </div>
                         
                         <div class="defense-item-box4">
@@ -483,6 +594,10 @@
                             <div class="chinese-text text-xs text-gray-500">智能摄像头和传感器立即发现正在进行的入室盗窃、擅自进入或破坏行为。</div>
                             <p class="text-sm text-gray-600 mt-2">The faster the system detects, the faster it can trigger deterrents or summon help.</p>
                             <div class="chinese-text text-xs text-gray-500">系统检测得越快，就能越快触发威慑或召唤帮助。</div>
+                        <div class="scenario-box3">
+                                <strong>Scenario:</strong> Robberies can happen at any moment, day or night, the logic is if you can react faster to the situation there's a better chance to solve it.
+                                <div class="chinese-text text-xs mt-1">情景：抢劫可能在任何时候发生，白天或黑夜，逻辑是如果你能更快地对情况做出反应，就有更好的机会解决它。</div>
+                            </div>
                         </div>
                         
                         <div class="defense-item-box4">
@@ -492,6 +607,10 @@
                             <div class="chinese-text text-xs text-gray-500">明亮的泛光灯、响亮的警报器和实时语音警告可以在犯罪完成之前阻止入侵者。</div>
                             <p class="text-sm text-gray-600 mt-2">Criminals prefer easy targets—visible, active defenses can drive them away mid-attempt.</p>
                             <div class="chinese-text text-xs text-gray-500">犯罪分子偏爱容易的目标——可见的、主动的防御可以在企图中途将他们赶走。</div>
+                        <div class="scenario-box3">
+                                <strong>Scenario:</strong> Catching someone in the act or "red-handed" is more likely to cause them to panic and flee, anything that may draw attention to them can potentially prevent harm, this is also a common tactic for female self-defense is to cause a "scene" to disrupt someone dangerous.
+                                <div class="chinese-text text-xs mt-1">情景：抓住某人"当场"或"现行"更可能导致他们恐慌和逃跑，任何可能引起对他们注意的事情都可能防止伤害，这也是女性自卫的常见策略，即制造"场面"来扰乱危险人员。</div>
+                            </div>
                         </div>
                         
                         <div class="defense-item-box4">
@@ -501,6 +620,10 @@
                             <div class="chinese-text text-xs text-gray-500">高清视频和音频确保不会丢失任何细节，从嫌疑人的外观到逃跑车辆。</div>
                             <p class="text-sm text-gray-600 mt-2">Continuous or event-triggered recording builds an indisputable timeline of the incident.</p>
                             <div class="chinese-text text-xs text-gray-500">连续或事件触发的录制建立了事件的无可争议的时间线。</div>
+                        <div class="scenario-box3">
+                                <strong>Scenario:</strong> Hope is in the evidence after an intrusion, if an expected camera fails during this time it can lead to a feeling of hopelessness. If a car is stolen but your camera missed it, you now have more questions than answers.
+                                <div class="chinese-text text-xs mt-1">情景：入侵后希望在于证据，如果预期的摄像头在这个时候失败，可能会导致绝望感。如果汽车被盗但你的摄像头错过了，你现在的问题比答案更多。</div>
+                            </div>
                         </div>
                         
                         <div class="defense-item-box4">
@@ -510,6 +633,10 @@
                             <div class="chinese-text text-xs text-gray-500">清晰、记录完善的录像对警方调查和保险索赔至关重要。</div>
                             <p class="text-sm text-gray-600 mt-2">Strong evidence increases arrest rates and helps communities remove repeat offenders.</p>
                             <div class="chinese-text text-xs text-gray-500">有力的证据提高逮捕率，并帮助社区清除重复犯罪者。</div>
+                        <div class="scenario-box3">
+                                <strong>Scenario:</strong> Calling the police is a reasonable reaction for when you feel wronged, you want justice but also you want what happened to not happen again or to anyone else. People may go to extreme lengths to seek justice in US, involving the law is common practice.
+                                <div class="chinese-text text-xs mt-1">情景：当你感到被冤枉时，报警是合理的反应，你想要正义，但你也希望发生的事情不再发生或不发生在其他人身上。在美国，人们可能会竭尽全力寻求正义，涉及法律是常见做法。</div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -540,6 +667,10 @@
                             <div class="chinese-text text-xs text-gray-500">如果感知、通知和入侵威慑都无法阻止威胁，这一层确保仍有方法保护生命和财产。</div>
                             <p class="text-sm text-gray-600 mt-2">It focuses on immediate action, containment, and recovery.</p>
                             <div class="chinese-text text-xs text-gray-500">它专注于立即行动、遏制和恢复。</div>
+                        <div class="scenario-box4">
+                                <strong>Scenario:</strong> Time is crucial and you and your families safety is always priority. The right to defend yourself and home is a very normal expectation in the US.
+                                <div class="chinese-text text-xs mt-1">情景：时间至关重要，你和你家人的安全总是优先考虑的。在美国，保卫自己和家园的权利是一个非常正常的期望。</div>
+                            </div>
                         </div>
                         
                         <div class="defense-item-box3">
@@ -547,8 +678,12 @@
                             <div class="chinese-text font-bold text-gray-700 mb-2">紧急响应激活</div>
                             <p class="text-sm text-gray-600 mb-2">Direct connection to emergency services (police, fire, medical) for rapid dispatch.</p>
                             <div class="chinese-text text-xs text-gray-500">直接连接紧急服务（警察、消防、医疗）以快速派遣。</div>
-                            <p class="text-sm text-gray-600 mt-2">Automated alerts can send critical details—location, type of incident, and live video—to responders.</p>
-                            <div class="chinese-text text-xs text-gray-500">自动警报可以向响应者发送关键细节——位置、事件类型和实时视频。</div>
+                            <p class="text-sm text-gray-600 mt-2">Calling 911 or automated alerts can send critical details—location, type of incident, and live video—to responders is desirable.</p>
+                            <div class="chinese-text text-xs text-gray-500">拨打911或自动警报可以向响应者发送关键细节——位置、事件类型和实时视频——这是理想的。</div>
+                        <div class="scenario-box4">
+                                <strong>Scenario:</strong> Calling 911 is reserved for emergencies, so you learn from a young age that 911 is very special, police response in most areas to an "active" situation is expected among Americans if that call is made. The dispatch may even stay on the phone with you and guide you until the police arrive.
+                                <div class="chinese-text text-xs mt-1">情景：拨打911是为紧急情况保留的，所以你从小就知道911非常特殊，如果拨打了这个电话，美国人期望大多数地区的警察对"活跃"情况做出响应。调度员甚至可能会一直与你通话并指导你直到警察到达。</div>
+                            </div>
                         </div>
                         
                         <div class="defense-item-box3">
@@ -558,6 +693,10 @@
                             <div class="chinese-text text-xs text-gray-500">锁具、加固的门窗和安全区域在帮助到达之前保护家庭成员。</div>
                             <p class="text-sm text-gray-600 mt-2">Can include panic buttons or app-based emergency triggers.</p>
                             <div class="chinese-text text-xs text-gray-500">可以包括紧急按钮或基于应用程序的紧急触发器。</div>
+                        <div class="scenario-box4">
+                                <strong>Scenario:</strong> Relying on preventiative measures you can become more reliant on them, such as an anti-kick door or bars on windows, and locks on other doors in the house. This can give you time to prepare you and your family to get away, grab weapons, and call for help.
+                                <div class="chinese-text text-xs mt-1">情景：依靠预防措施你可以变得更加依赖它们，比如防踢门或窗户上的栅栏，以及房子里其他门上的锁。这可以给你时间准备你和你的家人逃脱、抓取武器并呼救。</div>
+                            </div>
                         </div>
                         
                         <div class="defense-item-box3">
@@ -567,6 +706,11 @@
                             <div class="chinese-text text-xs text-gray-500">优先考虑让家庭成员安全，无论是通过疏散计划、安全房间还是通过安全系统的指导指令。</div>
                             <p class="text-sm text-gray-600 mt-2">Even if property loss occurs, human safety is preserved.</p>
                             <div class="chinese-text text-xs text-gray-500">即使发生财产损失，人身安全也得到保护。</div>
+                        <div class="scenario-box4">
+                                <strong>Scenario:</strong> It's common for homes to have multiple rooms and floors, and most people know where are the safest locations in their homes. If you are a gun owner, you may even have an action plan in place for your family.
+                                <p>NOTE: A gun is meant to kill, an intrusion while you are home can put your life at risk, so a gun is acceptable to defend with (In most situations.)</p>
+                                <div class="chinese-text text-xs mt-1">情景：房屋通常有多个房间和楼层，大多数人知道他们家中最安全的位置在哪里。如果你是枪支拥有者，你甚至可能为你的家人制定了行动计划。注意：枪支是用来杀戮的，当你在家时的入侵可能会危及你的生命，所以用枪防卫是可以接受的（在大多数情况下）。</div>
+                            </div>
                         </div>
                         
                         <div class="defense-item-box3">
@@ -576,23 +720,29 @@
                             <div class="chinese-text text-xs text-gray-500">事后支持：保险文件、执法协调和系统分析以防止重复事件。</div>
                             <p class="text-sm text-gray-600 mt-2">Ensures that the event is fully resolved and lessons are integrated into the home's security strategy.</p>
                             <div class="chinese-text text-xs text-gray-500">确保事件得到完全解决，并将经验教训整合到家庭安全战略中。</div>
+                        <div class="scenario-box4">
+                                <strong>Scenario:</strong> If you have entry into your home, afterwards you will want evidence to seek justice and find the truth. If a firearm or violence was involved, it can be used to protect you from false allegations.
+                                <p>NOTE: If you fire a gun in a residential area, it will always be investigated and has high potential to be taken to court.</p>
+                                <div class="chinese-text text-xs mt-1">情景：如果有人进入你的家，之后你会想要证据来寻求正义和寻找真相。如果涉及火器或暴力，它可以用来保护你免受虚假指控。注意：如果你在住宅区开枪，总是会被调查并且很有可能被起诉。</div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- NEW SECTION: Layered Home Intrusion Deterrence & Defense -->
+
+        <!-- Layered Home Intrusion Deterrence & Defense -->
         <div class="mb-16 no-break">
             <h2 class="text-2xl font-bold text-center mb-2 text-gray-800">Layered Home Intrusion Deterrence & Defense</h2>
-            <div class="chinese-text text-center mb-8 text-gray-600">分层家庭入侵威慑与防御</div>
-            <div class="space-y-4 max-w-6xl mx-auto">
+            <div class="chinese-text text-center mb-8 text-gray-600">分层家庭入侵威慑和防御</div>
+            <div class="space-y-4 max-w-4xl mx-auto">
                 
                 <!-- Outer Perimeter -->
                 <div class="defense-card-compact rounded-lg shadow-lg overflow-hidden" onclick="toggleDefenseDropdown('layer1')">
-                    <div class="defense-gradient-purple text-white p-4 flex items-center space-x-4">
+                    <div class="defense-gradient-purple1 text-white p-4 flex items-center space-x-4">
                         <div class="flex-shrink-0">
-                            <i class="fas fa-fence text-5xl"></i>
+                            <i class="fas fa-xmarks-lines text-5xl"></i>
                         </div>
                         <div class="flex-grow">
                             <div class="flex items-center justify-between">
@@ -607,44 +757,56 @@
                         </div>
                     </div>
                     <div class="defense-dropdown" id="layer1-content">
-                        <div class="defense-item-box5">
-                            <h4 class="font-bold text-gray-800 mb-2"><i class="fas fa-fence mr-2"></i>Fences & Gates</h4>
+                        <div class="defense-item-box9">
+                            <h4 class="font-bold text-gray-800 mb-2"><i class="fas fa-xmarks-lines mr-2"></i>Fences & Gates</h4>
                             <div class="chinese-text font-bold text-gray-700 mb-2">围栏和大门</div>
-                            <p class="text-sm text-gray-600 mb-2">Tall fences, locked gates, and privacy barriers make entry harder and signal protection.</p>
-                            <div class="chinese-text text-xs text-gray-500 mb-2">高大的围栏、上锁的大门和隐私屏障使进入更加困难并发出保护信号。</div>
-                            <div class="scenario-box">
-                                <strong>Scenario:</strong> A thief skips the house after seeing a tall locked gate with no easy access.
-                                <div class="chinese-text text-xs mt-1">情景：小偷看到一个没有简易入口的高大上锁大门后跳过了这座房子。</div>
+                            <p class="text-sm text-gray-600 mb-2">Tall fences, locked gates, and privacy barriers seperate your home from the street, sidewalks and wildlife, while making entry harder and signal protection.</p>
+                            <div class="chinese-text text-xs text-gray-500 mb-2">高大的围栏、上锁的大门和隐私屏障将您的家与街道、人行道和野生动物分开，同时使进入更加困难并发出保护信号。</div>
+                            <div class="scenario-box5">
+                                <strong>Scenario:</strong> Someone jumping over your fence is highly suspicious, there is not many instances when this is acceptable. Also, an intruder wants to be quick, a fence can also prevent a "quick escape".
+                                <div class="chinese-text text-xs mt-1">情景：有人跳过你的围栏是非常可疑的，很少有情况下这是可以接受的。而且，入侵者想要快速行动，围栏也可以阻止"快速逃脱"。</div>
                             </div>
                         </div>
                         
-                        <div class="defense-item-box5">
-                            <h4 class="font-bold text-gray-800 mb-2"><i class="fas fa-users mr-2"></i>Neighborhood Watch & Community Alerts</h4>
-                            <div class="chinese-text font-bold text-gray-700 mb-2">社区监督和社区警报</div>
-                            <p class="text-sm text-gray-600 mb-2">Neighbors monitor suspicious activity and share alerts via apps or meetings.</p>
-                            <div class="chinese-text text-xs text-gray-500 mb-2">邻居监视可疑活动并通过应用程序或会议分享警报。</div>
-                            <div class="scenario-box">
-                                <strong>Scenario:</strong> A neighbor posts a photo of a suspicious vehicle, and multiple residents check their cameras.
-                                <div class="chinese-text text-xs mt-1">情景：邻居发布了一张可疑车辆的照片，多位居民查看了他们的摄像头。</div>
+                        <div class="defense-item-box9">
+                            <h4 class="font-bold text-gray-800 mb-2"><i class="fas fa-lightbulb mr-2"></i>Lights On</h4>
+                            <div class="chinese-text font-bold text-gray-700 mb-2">开灯</div>
+                            <p class="text-sm text-gray-600 mb-2">Lights on in the evening or while you're away can signal to criminals that this house may have someone inside, which they may avoid since robbers want to be unnoticed and not have to deal with a person.</p>
+                            <div class="chinese-text text-xs text-gray-500 mb-2">晚上或您不在时开灯可以向罪犯发出信号，表明这所房子里可能有人，他们可能会避开，因为强盗希望不被注意到，不想与人打交道。</div>
+                            <div class="scenario-box5">
+                                <strong>Scenario:</strong> Especially alone, some people may turn on multiple lights in the evening to signal to people outside there are "people home" and this house is active. Front doors tend to have "lights" you can also turn on that signal someone is home and that your "available" if someone were to approach.
+                                <div class="chinese-text text-xs mt-1">情景：特别是独自一人时，有些人可能在晚上开多盏灯来向外面的人发出信号，表明"家里有人"，这所房子是活跃的。前门通常有"灯"，您也可以打开，表示有人在家，如果有人接近，您是"有空的"。</div>
                             </div>
                         </div>
                         
-                        <div class="defense-item-box5">
+                        <div class="defense-item-box9">
                             <h4 class="font-bold text-gray-800 mb-2"><i class="fas fa-sign mr-2"></i>Decoys & Signs</h4>
                             <div class="chinese-text font-bold text-gray-700 mb-2">诱饵和标志</div>
                             <p class="text-sm text-gray-600 mb-2">Security company signs, fake cameras, and "beware of dog" notices create perceived risk.</p>
                             <div class="chinese-text text-xs text-gray-500 mb-2">安全公司标志、假摄像头和"小心恶犬"通知创造了感知风险。</div>
-                            <div class="scenario-box">
-                                <strong>Scenario:</strong> A burglar changes targets after spotting multiple warning signs.
-                                <div class="chinese-text text-xs mt-1">情景：入室盗贼在发现多个警告标志后改变了目标。</div>
+                            <div class="scenario-box5">
+                                <strong>Scenario:</strong> People often place a sign in their yard to indicate they have a security measure in place. Some people may even buy the sign just to "deter" a criminal. Multiple of these signs in a neighborhood also can indicate a security aware environment, which criminals may avoid.
+                                <div class="chinese-text text-xs mt-1">情景：人们经常在院子里放置标志来表明他们有安全措施。有些人甚至可能只是为了"威慑"罪犯而购买标志。社区中多个这样的标志也可以表明一个有安全意识的环境，罪犯可能会避开。</div>
                             </div>
                         </div>
+
+                        <div class="defense-item-box9">
+                            <h4 class="font-bold text-gray-800 mb-2"><i class="fas fa-users mr-2"></i>Neighborhood Watch & Community Alerts</h4>
+                            <div class="chinese-text font-bold text-gray-700 mb-2">社区监督和社区警报</div>
+                            <p class="text-sm text-gray-600 mb-2">Neighbors monitor suspicious activity and share alerts via apps or meetings. A "close community" does a lot to help each other.</p>
+                            <div class="chinese-text text-xs text-gray-500 mb-2">邻居监视可疑活动并通过应用程序或会议分享警报。"紧密的社区"会做很多事情来互相帮助。</div>
+                            <div class="scenario-box5">
+                                <strong>Scenario:</strong> From a delivery to someone near your car or on your property, if a neighbor sees it, you will likely be notified by them. A well trusted neighbor may even have a key to your home for "just-in-case" situations.
+                                <div class="chinese-text text-xs mt-1">情景：从快递到有人在您的车附近或您的财产上，如果邻居看到了，他们很可能会通知您。一个值得信赖的邻居甚至可能有您家的钥匙，以备"以防万一"的情况。</div>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
                 
                 <!-- Property Perimeter -->
                 <div class="defense-card-compact rounded-lg shadow-lg overflow-hidden" onclick="toggleDefenseDropdown('layer2')">
-                    <div class="defense-gradient-teal text-white p-4 flex items-center space-x-4">
+                    <div class="defense-gradient-purple2 text-white p-4 flex items-center space-x-4">
                         <div class="flex-shrink-0">
                             <i class="fas fa-lightbulb text-5xl"></i>
                         </div>
@@ -661,36 +823,47 @@
                         </div>
                     </div>
                     <div class="defense-dropdown" id="layer2-content">
-                        <div class="defense-item-box6">
+                        <div class="defense-item-box9">
                             <h4 class="font-bold text-gray-800 mb-2"><i class="fas fa-sun mr-2"></i>Motion-Activated Lighting</h4>
                             <div class="chinese-text font-bold text-gray-700 mb-2">运动激活照明</div>
-                            <p class="text-sm text-gray-600 mb-2">Floodlights activate on movement, startling and exposing intruders.</p>
-                            <div class="chinese-text text-xs text-gray-500 mb-2">泛光灯在检测到运动时激活，惊吓并暴露入侵者。</div>
-                            <div class="scenario-box">
-                                <strong>Scenario:</strong> Someone creeping along the fence line is suddenly lit up, forcing them to retreat.
-                                <div class="chinese-text text-xs mt-1">情景：沿着围栏线潜行的人突然被照亮，迫使他们撤退。</div>
+                            <p class="text-sm text-gray-600 mb-2">Floodlights activate on movement, startling and exposing people, animals and intruders. Can also signal to homeowner of event.</p>
+                            <div class="chinese-text text-xs text-gray-500 mb-2">泛光灯在检测到运动时激活，惊吓并暴露人员、动物和入侵者。也可以向房主发出事件信号。</div>
+                            <div class="scenario-box5">
+                                <strong>Scenario:</strong> Sitting at home at night and a backyard floodlight turns on randomly, this is going to raise anxiety until you figure out what caused it. It can also be useful if you need to go outside at night to easily light a "dark" are with no effort.
+                                <div class="chinese-text text-xs mt-1">情景：晚上坐在家里，后院的泛光灯随机打开，这会引起焦虑，直到您找出原因。如果您需要在夜间外出，它也很有用，可以毫不费力地照亮"黑暗"区域。</div>
                             </div>
                         </div>
                         
-                        <div class="defense-item-box6">
+                        <div class="defense-item-box9">
                             <h4 class="font-bold text-gray-800 mb-2"><i class="fas fa-route mr-2"></i>Driveway & Entry Sensors</h4>
                             <div class="chinese-text font-bold text-gray-700 mb-2">车道和入口传感器</div>
-                            <p class="text-sm text-gray-600 mb-2">Detect vehicles or people entering property before reaching the home.</p>
-                            <div class="chinese-text text-xs text-gray-500 mb-2">在到达房屋之前检测进入物业的车辆或人员。</div>
-                            <div class="scenario-box">
-                                <strong>Scenario:</strong> A sensor alerts a homeowner at 2 AM when someone walks up the driveway.
-                                <div class="chinese-text text-xs mt-1">情景：凌晨2点有人走上车道时，传感器警报房主。</div>
+                            <p class="text-sm text-gray-600 mb-2">Detect vehicles or people entering property before reaching the home. Hopefully notifying the owner of an event.</p>
+                            <div class="chinese-text text-xs text-gray-500 mb-2">在到达房屋之前检测进入物业的车辆或人员。希望能通知业主有事件发生。</div>
+                            <div class="scenario-box5">
+                                <strong>Scenario:</strong> In the basement, bedroom, or office you usually don't have a means to "see". If you get a notification, you can proactively investigate the cause rather than being surprised.
+                                <div class="chinese-text text-xs mt-1">情景：在地下室、卧室或办公室，您通常没有"看到"的手段。如果您收到通知，您可以主动调查原因，而不是被吓到。</div>
+                            </div>
+                        </div>
+
+                        <div class="defense-item-box9">
+                            <h4 class="font-bold text-gray-800 mb-2"><i class="fas fa-bell mr-2"></i>Sound</h4>
+                            <div class="chinese-text font-bold text-gray-700 mb-2">声音</div>
+                            <p class="text-sm text-gray-600 mb-2">Residential neighborhoods can often times be quiet, hearing a noise like a car door closing, talking, or even walking can grab a homeowners attention, especially if they are alone.</p>
+                            <div class="chinese-text text-xs text-gray-500 mb-2">住宅区通常很安静，听到汽车门关闭、说话甚至走路等声音可以抓住房主的注意力，特别是如果他们独自一人。</div>
+                            <div class="scenario-box5">
+                                <strong>Scenario:</strong> If you're in bed at night and hear a car door closing at 3am in your driveway, you might want to check it out.
+                                <div class="chinese-text text-xs mt-1">情景：如果您晚上在床上，凌晨3点听到车道上有车门关闭的声音，您可能想去查看一下。</div>
                             </div>
                         </div>
                         
-                        <div class="defense-item-box6">
+                        <div class="defense-item-box9">
                             <h4 class="font-bold text-gray-800 mb-2"><i class="fas fa-dog mr-2"></i>Dogs</h4>
                             <div class="chinese-text font-bold text-gray-700 mb-2">犬类</div>
-                            <p class="text-sm text-gray-600 mb-2">Barking serves as both alarm and deterrent, warning owners and neighbors.</p>
-                            <div class="chinese-text text-xs text-gray-500 mb-2">吠叫既是警报又是威慑，警告主人和邻居。</div>
-                            <div class="scenario-box">
-                                <strong>Scenario:</strong> The dog's loud barking causes an intruder to abandon their approach.
-                                <div class="chinese-text text-xs mt-1">情景：狗的大声吠叫导致入侵者放弃他们的接近。</div>
+                            <p class="text-sm text-gray-600 mb-2">Barking serves as both alarm and deterrent, warning owners and neighbors of a potential event.</p>
+                            <div class="chinese-text text-xs text-gray-500 mb-2">吠叫既是警报又是威慑，警告主人和邻居潜在事件。</div>
+                            <div class="scenario-box5">
+                                <strong>Scenario:</strong> If a property has a large dog, barking or being in the yard can easily deter a criminal because every dog reacts differently, There is "no" standard. A small dog can bark to alert a homeowner that someone is approaching, or signal to you there is a problem. Dogs are known as "man's best friend".
+                                <div class="chinese-text text-xs mt-1">情景：如果房产有大狗，吠叫或在院子里可以轻易威慑罪犯，因为每只狗的反应都不同，没有"标准"。小狗可以吠叫来提醒房主有人接近，或向您发出有问题的信号。狗被称为"人类最好的朋友"。</div>
                             </div>
                         </div>
                     </div>
@@ -698,7 +871,7 @@
                 
                 <!-- Home Exterior -->
                 <div class="defense-card-compact rounded-lg shadow-lg overflow-hidden" onclick="toggleDefenseDropdown('layer3')">
-                    <div class="defense-gradient-indigo text-white p-4 flex items-center space-x-4">
+                    <div class="defense-gradient-purple3 text-white p-4 flex items-center space-x-4">
                         <div class="flex-shrink-0">
                             <i class="fas fa-video text-5xl"></i>
                         </div>
@@ -715,36 +888,36 @@
                         </div>
                     </div>
                     <div class="defense-dropdown" id="layer3-content">
-                        <div class="defense-item-box7">
-                            <h4 class="font-bold text-gray-800 mb-2"><i class="fas fa-camera mr-2"></i>Security Cameras</h4>
+                        <div class="defense-item-box9">
+                            <h4 class="font-bold text-gray-800 mb-2"><i class="fas fa-video mr-2"></i>Security Cameras</h4>
                             <div class="chinese-text font-bold text-gray-700 mb-2">安全摄像头</div>
-                            <p class="text-sm text-gray-600 mb-2">Provide live monitoring, alerts, and recorded evidence.</p>
-                            <div class="chinese-text text-xs text-gray-500 mb-2">提供实时监控、警报和录制证据。</div>
-                            <div class="scenario-box">
-                                <strong>Scenario:</strong> An intruder spots a camera's red recording light and leaves immediately.
-                                <div class="chinese-text text-xs mt-1">情景：入侵者发现摄像头的红色录制灯后立即离开。</div>
+                            <p class="text-sm text-gray-600 mb-2">Provide live monitoring, alerts, and recorded evidence. This is useful for daily activities, while away, and keeping an eye on vulnerable areas while providing a relief making sure everything is "OK".</p>
+                            <div class="chinese-text text-xs text-gray-500 mb-2">提供实时监控、警报和录制证据。这对日常活动、外出时以及监视脆弱区域都很有用，同时提供安心感，确保一切"正常"。</div>
+                            <div class="scenario-box5">
+                                <strong>Scenario:</strong> Good or bad, people enjoy checking their cameras for a variety of reasons. Security is not the only reason people have cameras. 
+                                <div class="chinese-text text-xs mt-1">情景：无论好坏，人们出于各种原因喜欢查看他们的摄像头。安全不是人们拥有摄像头的唯一原因。</div>
                             </div>
                         </div>
                         
-                        <div class="defense-item-box7">
-                            <h4 class="font-bold text-gray-800 mb-2"><i class="fas fa-window-maximize mr-2"></i>Window Films & Privacy Screens</h4>
-                            <div class="chinese-text font-bold text-gray-700 mb-2">窗膜和隐私屏幕</div>
-                            <p class="text-sm text-gray-600 mb-2">Reinforce glass and block inside view.</p>
-                            <div class="chinese-text text-xs text-gray-500 mb-2">加固玻璃并阻止内部视线。</div>
-                            <div class="scenario-box">
-                                <strong>Scenario:</strong> A burglar tries to smash a window, but the film holds, preventing quick access.
-                                <div class="chinese-text text-xs mt-1">情景：入室盗贼试图砸碎窗户，但薄膜保持完整，阻止了快速进入。</div>
+                        <div class="defense-item-box9">
+                            <h4 class="font-bold text-gray-800 mb-2"><i class="fas fa-window-maximize mr-2"></i>Window Films, Privacy Screens, Curtains</h4>
+                            <div class="chinese-text font-bold text-gray-700 mb-2">窗膜、隐私屏幕、窗帘</div>
+                            <p class="text-sm text-gray-600 mb-2">Reinforced glass (prevents smashes), bars prevent entry and curtains block inside view. People may not want others seeing inside their homes while they are home or away. There might be something valuable, private, or the owner just wants extra privacy. </p>
+                            <div class="chinese-text text-xs text-gray-500 mb-2">加固玻璃（防止砸碎）、栅栏防止进入，窗帘阻挡内部视线。人们可能不希望其他人在他们在家或外出时看到他们家里的情况。可能有贵重物品、私人物品，或者业主只是想要额外的隐私。</div>
+                            <div class="scenario-box5">
+                                <strong>Scenario:</strong> TVs, computers, photos, electronics, furniture, game systems, and anything else of value can sometimes be seen easily through a window. At night, if you are outside, it is easy to see inside a ligthed room but hard to see outside from a lighted room. Most homes have a "ground floor".
+                                <div class="chinese-text text-xs mt-1">情景：电视、电脑、照片、电子设备、家具、游戏系统和其他任何有价值的东西有时可以通过窗户轻易看到。晚上，如果您在外面，很容易看到亮着灯的房间内部，但从亮着灯的房间里很难看到外面。大多数房屋都有"一楼"。</div>
                             </div>
                         </div>
                         
-                        <div class="defense-item-box7">
+                        <div class="defense-item-box9">
                             <h4 class="font-bold text-gray-800 mb-2"><i class="fas fa-door-closed mr-2"></i>Reinforced Doors & Windows</h4>
                             <div class="chinese-text font-bold text-gray-700 mb-2">加固门窗</div>
-                            <p class="text-sm text-gray-600 mb-2">Heavy-duty deadbolts, strike plates, and shatter-resistant glass stop forced entry.</p>
-                            <div class="chinese-text text-xs text-gray-500 mb-2">重型防盗锁、撞击板和抗碎玻璃阻止强行进入。</div>
-                            <div class="scenario-box">
-                                <strong>Scenario:</strong> An intruder kicks the door repeatedly but can't break through.
-                                <div class="chinese-text text-xs mt-1">情景：入侵者反复踢门但无法突破。</div>
+                            <p class="text-sm text-gray-600 mb-2">Heavy-duty deadbolts, strike plates, reinforced doors, bars on windows, extram locks, and shatter-resistant glass stop forced entry.</p>
+                            <div class="chinese-text text-xs text-gray-500 mb-2">重型防盗锁、撞击板、加固门、窗户栅栏、额外锁具和抗碎玻璃阻止强行进入。</div>
+                            <div class="scenario-box5">
+                                <strong>Scenario:</strong> A home tends to have multiple entry points, even through the garage. Most owners know their homes weakest points and will attempt to secure them in some way. This is especially prevelant if they encountered any previous crimes.
+                                <div class="chinese-text text-xs mt-1">情景：房屋往往有多个入口点，甚至通过车库。大多数业主知道他们家最薄弱的地方，并会尝试以某种方式保护它们。如果他们以前遇到过任何犯罪，这种情况尤其普遍。</div>
                             </div>
                         </div>
                     </div>
@@ -752,7 +925,7 @@
                 
                 <!-- Interior -->
                 <div class="defense-card-compact rounded-lg shadow-lg overflow-hidden" onclick="toggleDefenseDropdown('layer4')">
-                    <div class="defense-gradient-pink text-white p-4 flex items-center space-x-4">
+                    <div class="defense-gradient-purple4 text-white p-4 flex items-center space-x-4">
                         <div class="flex-shrink-0">
                             <i class="fas fa-home text-5xl"></i>
                         </div>
@@ -769,47 +942,61 @@
                         </div>
                     </div>
                     <div class="defense-dropdown" id="layer4-content">
-                        <div class="defense-item-box8">
+                        <div class="defense-item-box9">
                             <h4 class="font-bold text-gray-800 mb-2"><i class="fas fa-bell mr-2"></i>Alarm Systems</h4>
                             <div class="chinese-text font-bold text-gray-700 mb-2">警报系统</div>
-                            <p class="text-sm text-gray-600 mb-2">Sensors and sirens alert owners and authorities to intrusion.</p>
-                            <div class="chinese-text text-xs text-gray-500 mb-2">传感器和警报器向业主和当局警报入侵。</div>
-                            <div class="scenario-box">
-                                <strong>Scenario:</strong> A back door sensor triggers a blaring alarm, and police are dispatched.
-                                <div class="chinese-text text-xs mt-1">情景：后门传感器触发刺耳警报，警察被派遣。</div>
+                            <p class="text-sm text-gray-600 mb-2">Sensors and sirens alert owners and authorities to intrusions or unusual activity.</p>
+                            <div class="chinese-text text-xs text-gray-500 mb-2">传感器和警报器向业主和当局警报入侵或异常活动。</div>
+                            <div class="scenario-box5">
+                                <strong>Scenario:</strong> Setting an alarm while away or at home alone is very common with the people who own these systems. There might be a special code involved that is secretly shared with friends and family. Rooms that have higher priced valuables or family tend to be prioritized with sensors. 
+                                <div class="chinese-text text-xs mt-1">情景：外出或独自在家时设置警报对于拥有这些系统的人来说非常常见。可能涉及一个秘密与朋友和家人分享的特殊代码。有较高价值物品或家人的房间往往优先安装传感器。</div>
                             </div>
                         </div>
                         
-                        <div class="defense-item-box8">
-                            <h4 class="font-bold text-gray-800 mb-2"><i class="fas fa-lock mr-2"></i>Smart Locks</h4>
-                            <div class="chinese-text font-bold text-gray-700 mb-2">智能锁</div>
-                            <p class="text-sm text-gray-600 mb-2">Keyless systems with PIN codes, biometrics, or app control prevent lock tampering.</p>
-                            <div class="chinese-text text-xs text-gray-500 mb-2">带PIN码、生物识别或应用控制的无钥匙系统防止锁具篡改。</div>
-                            <div class="scenario-box">
-                                <strong>Scenario:</strong> The system alerts the homeowner when someone attempts multiple wrong codes.
-                                <div class="chinese-text text-xs mt-1">情景：当有人尝试多次错误密码时，系统警报房主。</div>
+                        <div class="defense-item-box9">
+                            <h4 class="font-bold text-gray-800 mb-2"><i class="fas fa-lock mr-2"></i>Locks & Smart Locks</h4>
+                            <div class="chinese-text font-bold text-gray-700 mb-2">锁具和智能锁</div>
+                            <p class="text-sm text-gray-600 mb-2"> Bedrooms and bathrooms may all have locks on the doors in a house, usually for privacy and may be locked at night or while home alone. Main doors tend to have heavier duty locks than other internal doors. Keyless systems with PIN codes, biometrics, or app control prevent lock tampering.</p>
+                            <div class="chinese-text text-xs text-gray-500 mb-2">房屋中的卧室和浴室可能都在门上有锁，通常是为了隐私，可能在夜间或独自在家时锁上。主门往往比其他内部门有更重的锁。带PIN码、生物识别或应用控制的无钥匙系统防止锁具篡改。</div>
+                            <div class="scenario-box5">
+                                <strong>Scenario:</strong> Somebody might mess with a keyless lock and you could recieve notifications. In the event of a break-ins looks on bathroom and bedroom doors could be useful.
+                                <div class="chinese-text text-xs mt-1">情景：有人可能会弄乱无钥匙锁，您可能会收到通知。在入室盗窃事件中，浴室和卧室门上的锁可能很有用。</div>
                             </div>
                         </div>
 
-                         <div class="defense-item-box8">
+                         <div class="defense-item-box9">
                             <h4 class="font-bold text-gray-800 mb-2"><i class="fas fa-video mr-2"></i>Interior Cameras</h4>
                             <div class="chinese-text font-bold text-gray-700 mb-2">室内摄像机</div>
                             <p class="text-sm text-gray-600 mb-2">Indoor cams set up to watch certain rooms, pets, kids, elders and potential intrusions.</p>
-                            <div class="chinese-text text-xs text-gray-500 mb-2">室内摄像机可用于监控特定房间、宠物、孩子，老人，以及潜在的入侵行为。</div>
-                            <div class="scenario-box">
-                                <strong>Scenario:</strong> Someone enters my home while I am away, I can see who they are and what they do.
-                                <div class="chinese-text text-xs mt-1">情景：当我不在家时，如果有人进入，我可以看到他们是谁以及他们的行为。</div>
+                            <div class="chinese-text text-xs text-gray-500 mb-2">室内摄像机设置用于监视特定房间、宠物、孩子、老人和潜在的入侵行为。</div>
+                            <div class="scenario-box5">
+                                <strong>Scenario:</strong> Someone enters my home while I am away, I can see who they are and what they do. Being gone for an extended period of times can cause anxiety, checking inside your home can bring added relief. Possible to also watch items or speicifc activities. 
+                                <div class="chinese-text text-xs mt-1">情景：当我不在家时有人进入我家，我可以看到他们是谁以及他们做什么。长时间外出可能会引起焦虑，检查家里的情况可以带来额外的安心感。也可能监视物品或特定活动。</div>
+                            </div>
+                        </div>
+
+                        <div class="defense-item-box9">
+                            <h4 class="font-bold text-gray-800 mb-2"><i class="fas fa-stairs mr-2"></i>Vantage Points & Weapons</h4>
+                            <div class="chinese-text font-bold text-gray-700 mb-2">制高点和武器</div>
+                            <p class="text-sm text-gray-600 mb-2">Homes with 2 stories offer an unique advantage from the upstairs. Most people will break in on the ground floor, so sleeping and being upstairs gives a homeowner a funneled vantage point in the event of an intrustion.</p>
+                            <div class="chinese-text text-xs text-gray-500 mb-2">两层楼的房屋在楼上提供了独特的优势。大多数人会从一楼闯入，所以睡觉和在楼上给房主在入侵事件中提供了一个有利的制高点。</div>
+                            <p class="text-sm text-gray-600 mb-2">It is not uncommon for non-gun homeowners to keep a weapon like a knife or bat next to their beds if they have to approach an instrusion.</p>
+                            <div class="chinese-text text-xs text-gray-500 mb-2">对于非枪支拥有者的房主来说，如果他们必须面对入侵，在床边放置刀或球棒等武器并不少见。</div>
+
+                            <div class="scenario-box5">
+                                <strong>Scenario:</strong> At home, in bed, in the dark can be a high anxiety drive for people, IF a noise is heard the reaction may include grabbing a weapon, being quiet, and locking your bedroom door. 
+                                <div class="chinese-text text-xs mt-1">情景：在家里、在床上、在黑暗中对人们来说可能是高度焦虑的，如果听到噪音，反应可能包括抓取武器、保持安静和锁上卧室门。</div>
                             </div>
                         </div>
                         
-                        <div class="defense-item-box8">
+                        <div class="defense-item-box9">
                             <h4 class="font-bold text-gray-800 mb-2"><i class="fas fa-shield-alt mr-2"></i>Firearms (in gun-owning households)</h4>
                             <div class="chinese-text font-bold text-gray-700 mb-2">枪支（在拥有枪支的家庭中）</div>
                             <p class="text-sm text-gray-600 mb-2">Used as a final defensive option where legal and trained.</p>
                             <div class="chinese-text text-xs text-gray-500 mb-2">在合法和受过训练的情况下作为最终防御选项使用。</div>
-                            <div class="scenario-box">
-                                <strong>Scenario:</strong> A homeowner calls 911 and secures their family while armed until help arrives.
-                                <div class="chinese-text text-xs mt-1">情景：房主报警911并在武装状态下保护家人直到帮助到达。</div>
+                            <div class="scenario-box5">
+                                <strong>Scenario:</strong> A homeowner calls 911 and secures their family while armed until help arrives. Will use if necessary.
+                                <div class="chinese-text text-xs mt-1">情景：房主拨打911并在武装状态下保护家人直到帮助到达。必要时会使用。</div>
                             </div>
                         </div>
                     </div>
@@ -817,17 +1004,18 @@
             </div>
         </div>
 
-        <!-- Essential Security Features -->
+
+                <!-- Essential Security Features -->
         <div class="mb-16 no-break">
-            <h2 class="text-2xl font-bold text-center mb-2 text-gray-800">Essential Security Features</h2>
-            <div class="chinese-text text-center mb-8 text-gray-600">基本安全功能</div>
+            <h2 class="text-2xl font-bold text-center mb-2 text-gray-00">Essential Security Features</h2>
+            <div class="chinese-text text-center mb-8 text-gray-600">基本安全防护功能</div>
             <div class="grid grid-cols-4 gap-4 max-w-6xl mx-auto">
                 
                 <!-- Row 1 -->
                 <!-- Security Cameras -->
-                <div class="security-feature-box bg-white rounded-lg p-4 shadow border-l-4 border-blue-500 hover:shadow-lg transition-all duration-300 hover:transform hover:scale-105" onclick="openSecurityPopup('securitycameras')">
+                <div class="security-feature-box bg-white rounded-lg p-4 shadow border-l-4 border-gray-500 hover:shadow-lg transition-all duration-300 hover:transform hover:scale-105" onclick="openSecurityPopup('securitycameras')">
                     <div class="flex items-center justify-center flex-col text-center">
-                        <i class="fas fa-video text-blue-500 text-3xl mb-3"></i>
+                        <i class="fas fa-video text-blue-400 text-3xl mb-3"></i>
                         <h5 class="font-semibold text-gray-800 mb-1">Security Cameras</h5>
                         <div class="chinese-text font-semibold text-gray-700 text-xs">安全摄像头</div>
                         <div class="mt-2 text-xs text-gray-500">Click to learn more</div>
@@ -835,9 +1023,9 @@
                 </div>
 
                 <!-- Alarm Systems -->
-                <div class="security-feature-box bg-white rounded-lg p-4 shadow border-l-4 border-red-500 hover:shadow-lg transition-all duration-300 hover:transform hover:scale-105" onclick="openSecurityPopup('alarmsystems')">
+                <div class="security-feature-box bg-white rounded-lg p-4 shadow border-l-4 border-gray-500 hover:shadow-lg transition-all duration-300 hover:transform hover:scale-105" onclick="openSecurityPopup('alarmsystems')">
                     <div class="flex items-center justify-center flex-col text-center">
-                        <i class="fas fa-bell text-red-500 text-3xl mb-3"></i>
+                        <i class="fas fa-bell text-blue-400 text-3xl mb-3"></i>
                         <h5 class="font-semibold text-gray-800 mb-1">Alarm Systems</h5>
                         <div class="chinese-text font-semibold text-gray-700 text-xs">警报系统</div>
                         <div class="mt-2 text-xs text-gray-500">Click to learn more</div>
@@ -845,9 +1033,9 @@
                 </div>
 
                 <!-- Motion-Activated Lights -->
-                <div class="security-feature-box bg-white rounded-lg p-4 shadow border-l-4 border-yellow-500 hover:shadow-lg transition-all duration-300 hover:transform hover:scale-105" onclick="openSecurityPopup('motionlights')">
+                <div class="security-feature-box bg-white rounded-lg p-4 shadow border-l-4 border-gray-500 hover:shadow-lg transition-all duration-300 hover:transform hover:scale-105" onclick="openSecurityPopup('motionlights')">
                     <div class="flex items-center justify-center flex-col text-center">
-                        <i class="fas fa-lightbulb text-yellow-500 text-3xl mb-3"></i>
+                        <i class="fas fa-lightbulb text-blue-400 text-3xl mb-3"></i>
                         <h5 class="font-semibold text-gray-800 mb-1">Motion-Activated Lights</h5>
                         <div class="chinese-text font-semibold text-gray-700 text-xs">运动激活灯</div>
                         <div class="mt-2 text-xs text-gray-500">Click to learn more</div>
@@ -855,9 +1043,9 @@
                 </div>
 
                 <!-- Dogs -->
-                <div class="security-feature-box bg-white rounded-lg p-4 shadow border-l-4 border-green-500 hover:shadow-lg transition-all duration-300 hover:transform hover:scale-105" onclick="openSecurityPopup('dogs')">
+                <div class="security-feature-box bg-white rounded-lg p-4 shadow border-l-4 border-gray-500 hover:shadow-lg transition-all duration-300 hover:transform hover:scale-105" onclick="openSecurityPopup('dogs')">
                     <div class="flex items-center justify-center flex-col text-center">
-                        <i class="fas fa-dog text-green-500 text-3xl mb-3"></i>
+                        <i class="fas fa-dog text-blue-400 text-3xl mb-3"></i>
                         <h5 class="font-semibold text-gray-800 mb-1">Dogs</h5>
                         <div class="chinese-text font-semibold text-gray-700 text-xs">犬类</div>
                         <div class="mt-2 text-xs text-gray-500">Click to learn more</div>
@@ -866,9 +1054,9 @@
 
                 <!-- Row 2 -->
                 <!-- Reinforced Doors & Windows -->
-                <div class="security-feature-box bg-white rounded-lg p-4 shadow border-l-4 border-purple-500 hover:shadow-lg transition-all duration-300 hover:transform hover:scale-105" onclick="openSecurityPopup('reinforceddoors')">
+                <div class="security-feature-box bg-white rounded-lg p-4 shadow border-l-4 border-gray-500 hover:shadow-lg transition-all duration-300 hover:transform hover:scale-105" onclick="openSecurityPopup('reinforceddoors')">
                     <div class="flex items-center justify-center flex-col text-center">
-                        <i class="fas fa-door-closed text-purple-500 text-3xl mb-3"></i>
+                        <i class="fas fa-door-closed text-blue-400 text-3xl mb-3"></i>
                         <h5 class="font-semibold text-gray-800 mb-1">Reinforced Doors & Windows</h5>
                         <div class="chinese-text font-semibold text-gray-700 text-xs">加固门窗</div>
                         <div class="mt-2 text-xs text-gray-500">Click to learn more</div>
@@ -876,9 +1064,9 @@
                 </div>
 
                 <!-- Fences & Gates -->
-                <div class="security-feature-box bg-white rounded-lg p-4 shadow border-l-4 border-indigo-500 hover:shadow-lg transition-all duration-300 hover:transform hover:scale-105" onclick="openSecurityPopup('fencesgates')">
+                <div class="security-feature-box bg-white rounded-lg p-4 shadow border-l-4 border-gray-500 hover:shadow-lg transition-all duration-300 hover:transform hover:scale-105" onclick="openSecurityPopup('fencesgates')">
                     <div class="flex items-center justify-center flex-col text-center">
-                        <i class="fas fa-fence text-indigo-500 text-3xl mb-3"></i>
+                        <i class="fas fa-xmarks-lines text-blue-400 text-3xl mb-3"></i>
                         <h5 class="font-semibold text-gray-800 mb-1">Fences & Gates</h5>
                         <div class="chinese-text font-semibold text-gray-700 text-xs">围栏和大门</div>
                         <div class="mt-2 text-xs text-gray-500">Click to learn more</div>
@@ -886,9 +1074,9 @@
                 </div>
 
                 <!-- Smart Locks -->
-                <div class="security-feature-box bg-white rounded-lg p-4 shadow border-l-4 border-teal-500 hover:shadow-lg transition-all duration-300 hover:transform hover:scale-105" onclick="openSecurityPopup('smartlocks')">
+                <div class="security-feature-box bg-white rounded-lg p-4 shadow border-l-4 border-gray-500 hover:shadow-lg transition-all duration-300 hover:transform hover:scale-105" onclick="openSecurityPopup('smartlocks')">
                     <div class="flex items-center justify-center flex-col text-center">
-                        <i class="fas fa-lock text-teal-500 text-3xl mb-3"></i>
+                        <i class="fas fa-lock text-blue-400 text-3xl mb-3"></i>
                         <h5 class="font-semibold text-gray-800 mb-1">Smart Locks</h5>
                         <div class="chinese-text font-semibold text-gray-700 text-xs">智能锁</div>
                         <div class="mt-2 text-xs text-gray-500">Click to learn more</div>
@@ -896,21 +1084,62 @@
                 </div>
 
                 <!-- Window Security Film -->
-                <div class="security-feature-box bg-white rounded-lg p-4 shadow border-l-4 border-pink-500 hover:shadow-lg transition-all duration-300 hover:transform hover:scale-105" onclick="openSecurityPopup('windowfilm')">
+                <div class="security-feature-box bg-white rounded-lg p-4 shadow border-l-4 border-gray-500 hover:shadow-lg transition-all duration-300 hover:transform hover:scale-105" onclick="openSecurityPopup('windowfilm')">
                     <div class="flex items-center justify-center flex-col text-center">
-                        <i class="fas fa-window-maximize text-pink-500 text-3xl mb-3"></i>
+                        <i class="fas fa-window-maximize text-blue-400 text-3xl mb-3"></i>
                         <h5 class="font-semibold text-gray-800 mb-1">Window Security Film</h5>
                         <div class="chinese-text font-semibold text-gray-700 text-xs">窗户安全膜</div>
+                        <div class="mt-2 text-xs text-gray-500">Click to learn more</div>
+                    </div>
+                
+                </div>
+                <!-- Phone -->
+                <div class="security-feature-box bg-white rounded-lg p-4 shadow border-l-4 border-gray-500 hover:shadow-lg transition-all duration-300 hover:transform hover:scale-105" onclick="openSecurityPopup('phone')">
+                    <div class="flex items-center justify-center flex-col text-center">
+                        <i class="fas fa-phone text-blue-400 text-3xl mb-3"></i>
+                        <h5 class="font-semibold text-gray-800 mb-1">Phone</h5>
+                        <div class="chinese-text font-semibold text-gray-700 text-xs">电话</div>
+                        <div class="mt-2 text-xs text-gray-500">Click to learn more</div>
+                    </div>
+                </div>
+
+                <!-- Neighbors Security -->
+                <div class="security-feature-box bg-white rounded-lg p-4 shadow border-l-4 border-gray-500 hover:shadow-lg transition-all duration-300 hover:transform hover:scale-105" onclick="openSecurityPopup('neighbors')">
+                    <div class="flex items-center justify-center flex-col text-center">
+                        <i class="fas fa-users text-blue-400 text-3xl mb-3"></i>
+                        <h5 class="font-semibold text-gray-800 mb-1">Neighbors</h5>
+                        <div class="chinese-text font-semibold text-gray-700 text-xs">邻居</div>
+                        <div class="mt-2 text-xs text-gray-500">Click to learn more</div>
+                    </div>
+                </div>
+
+                <!-- Weapons -->
+                <div class="security-feature-box bg-white rounded-lg p-4 shadow border-l-4 border-gray-500 hover:shadow-lg transition-all duration-300 hover:transform hover:scale-105" onclick="openSecurityPopup('weapons')">
+                    <div class="flex items-center justify-center flex-col text-center">
+                        <i class="fas fa-shield text-blue-400 text-3xl mb-3"></i>
+                        <h5 class="font-semibold text-gray-800 mb-1">Weapons</h5>
+                        <div class="chinese-text font-semibold text-gray-700 text-xs">武器</div>
+                        <div class="mt-2 text-xs text-gray-500">Click to learn more</div>
+                    </div>
+                </div>
+
+                <!-- Gun Security -->
+                <div class="security-feature-box bg-white rounded-lg p-4 shadow border-l-4 border-gray-500 hover:shadow-lg transition-all duration-300 hover:transform hover:scale-105" onclick="openSecurityPopup('guns')">
+                    <div class="flex items-center justify-center flex-col text-center">
+                        <i class="fas fa-gun text-blue-400 text-3xl mb-3"></i>
+                        <h5 class="font-semibold text-gray-800 mb-1">Gun Security</h5>
+                        <div class="chinese-text font-semibold text-gray-700 text-xs">枪支安全</div>
                         <div class="mt-2 text-xs text-gray-500">Click to learn more</div>
                     </div>
                 </div>
             </div>
         </div>
 
+            
         <!-- Main User Priorities -->
         <div class="mb-12 no-break">
             <h2 class="text-2xl font-bold text-center mb-2 text-gray-800">Core User Priorities</h2>
-            <div class="chinese-text text-center mb-8 text-gray-600">核心用户需求</div>
+            <div class="chinese-text text-center mb-8 text-gray-600">美国家庭对于安防摄像头的核心需求</div>
             <div class="grid grid-cols-4 gap-4">
                 <div class="priority-gradient text-white rounded-lg p-6 text-center shadow-lg">
                     <i class="fas fa-tools text-3xl mb-3"></i>
@@ -1277,7 +1506,7 @@
         <!-- Product Key Points -->
          <div class="mt-12 mb-12 no-break">
             <h2 class="text-2xl font-bold text-center mb-2 text-gray-800">aosu Core Abilities</h2>
-            <div class="chinese-text text-center mb-8 text-gray-600">aosu核心能力</div>
+            <div class="chinese-text text-center mb-8 text-gray-600">aosu产品的核心优势和能力</div>
             <div class="grid grid-cols-4 gap-4">
                 
                 <div class="priority-gradient-aosu text-white rounded-lg p-6 text-center shadow-lg">
@@ -1396,27 +1625,27 @@
         // Security feature pop-up data
         const securityFeatures = {
             securitycameras: {
-            title: "Security Cameras",
-            titleChinese: "安全摄像头",
+            title : "Security Cameras",
+            titleChinese: "安全摄像头", 
             content: `
                 <div class="popup-two-column">
                     <div class="space-y-4">
                         <div class="flex items-center mb-4">
-                            <i class="fas fa-video text-blue-500 text-2xl mr-3"></i>
-                            <h4 class="font-bold text-lg text-gray-800">Security Cameras</h4>
+                            <i class="fas fa-video text-blue-400  text-2xl mr-3"></i>
+                            <h4 class="font-bold text-lg text-gray-800">The Extra Eyes of Your Home</h4>
                         </div>
                         <div class="space-y-3">
                             <div>
-                                <p class="text-sm text-gray-600 mb-1"><strong>Definition:</strong> Devices that record and stream video of property.</p>
-                                <div class="chinese-text text-xs text-gray-500">定义：记录和流式传输财产视频的设备。</div>
+                                <p class="text-sm text-gray-600 mb-1"><strong>Definition:</strong> Devices that record and stream video of property so you know your surroundings.</p>
+                                <div class="chinese-text text-xs text-gray-500">定义：记录和流式传输财产视频的设备，让您了解周围环境。</div>
                             </div>
                             <div>
-                                <p class="text-sm text-gray-600 mb-1"><strong>Why it works:</strong> Visibility deters crime and provides evidence.</p>
-                                <div class="chinese-text text-xs text-gray-500">为什么有效：可见性威慑犯罪并提供证据。</div>
+                                <p class="text-sm text-gray-600 mb-1"><strong>Why it works:</strong> Visibility deters crime and lets homeowners be more aware.</p>
+                                <div class="chinese-text text-xs text-gray-500">为什么有效：可见性威慑犯罪并让房主更加警觉。</div>
                             </div>
                             <div>
-                                <p class="text-sm text-gray-600 mb-1"><strong>Use:</strong> Catching package thieves or monitoring driveways.</p>
-                                <div class="chinese-text text-xs text-gray-500">用途：抓获包裹盗贼或监控车道。</div>
+                                <p class="text-sm text-gray-600 mb-1"><strong>Use:</strong> Catches crime, watches property, provides notifications, easy to check.</p>
+                                <div class="chinese-text text-xs text-gray-500">用途：抓获犯罪、监视财产、提供通知、易于检查。</div>
                             </div>
                         </div>
                     </div>
@@ -1434,21 +1663,21 @@
             <div class="popup-two-column">
                 <div class="space-y-4">
                     <div class="flex items-center mb-4">
-                        <i class="fas fa-bell text-red-500 text-2xl mr-3"></i>
-                        <h4 class="font-bold text-lg text-gray-800">Alarm Systems</h4>
+                        <i class="fas fa-bell text-blue-400  text-2xl mr-3"></i>
+                        <h4 class="font-bold text-lg text-gray-800">The Integrated Defense</h4>
                     </div>
                     <div class="space-y-3">
                         <div>
-                            <p class="text-sm text-gray-600 mb-1"><strong>Definition:</strong> Sensors that trigger sirens and alerts on intrusion.</p>
-                            <div class="chinese-text text-xs text-gray-500">定义：入侵时触发警报器和警报的传感器。</div>
+                            <p class="text-sm text-gray-600 mb-1"><strong>Definition:</strong> Sensors that trigger sirens and alerts on intrusion. Easy defense activation from a single area. Automatically triggers.</p>
+                            <div class="chinese-text text-xs text-gray-500">定义：入侵时触发警报器和警报的传感器。从单一区域轻松激活防御。自动触发。</div>
                         </div>
                         <div>
-                            <p class="text-sm text-gray-600 mb-1"><strong>Why it works:</strong> Loud noise scares intruders, alerts owners/police.</p>
-                            <div class="chinese-text text-xs text-gray-500">为什么有效：大声噪音吓跑入侵者，警报业主/警察。</div>
+                            <p class="text-sm text-gray-600 mb-1"><strong>Why it works:</strong> Loud noise scares intruders, alerts owners/police. Can respond faster than the homeowner, offers layer of deterrence and relief.</p>
+                            <div class="chinese-text text-xs text-gray-500">为什么有效：大声噪音吓跑入侵者，警报业主/警察。反应比房主更快，提供威慑和安心感。</div>
                         </div>
                         <div>
-                            <p class="text-sm text-gray-600 mb-1"><strong>Use:</strong> Detecting forced entry at night.</p>
-                            <div class="chinese-text text-xs text-gray-500">用途：夜间检测强行进入。</div>
+                            <p class="text-sm text-gray-600 mb-1"><strong>Use:</strong> At home, night, or while away. There is an active presence for all vulnerable areas of your home. You will have one extra element between your and intrusion.</p>
+                            <div class="chinese-text text-xs text-gray-500">用途：在家、夜间或外出时。为家中所有脆弱区域提供主动存在。您和入侵之间将有一个额外的保护元素。</div>
                         </div>
                     </div>
                 </div>
@@ -1465,21 +1694,21 @@
                 <div class="popup-two-column">
                     <div class="space-y-4">
                         <div class="flex items-center mb-4">
-                            <i class="fas fa-lightbulb text-yellow-500 text-2xl mr-3"></i>
-                            <h4 class="font-bold text-lg text-gray-800">Motion-Activated Lights</h4>
+                            <i class="fas fa-lightbulb text-blue-400 text-2xl mr-3"></i>
+                            <h4 class="font-bold text-lg text-gray-800">Light Up the Dark</h4>
                         </div>
                         <div class="space-y-3">
                             <div>
-                                <p class="text-sm text-gray-600 mb-1"><strong>Definition:</strong> Lights that turn on when movement is detected.</p>
-                                <div class="chinese-text text-xs text-gray-500">定义：检测到运动时开启的灯光。</div>
+                                <p class="text-sm text-gray-600 mb-1"><strong>Definition:</strong> Lights that turn on when movement is detected. At night, this is removing the element of hiding in the dark. Also, the speed at which it can activate is an added convenience.</p>
+                                <div class="chinese-text text-xs text-gray-500">定义：检测到运动时开启的灯光。在夜间，这是消除在黑暗中隐藏的因素。此外，激活速度也是额外的便利。</div>
                             </div>
                             <div>
-                                <p class="text-sm text-gray-600 mb-1"><strong>Why it works:</strong> Startles intruders and makes them visible.</p>
-                                <div class="chinese-text text-xs text-gray-500">为什么有效：惊吓入侵者并使他们可见。</div>
+                                <p class="text-sm text-gray-600 mb-1"><strong>Why it works:</strong> Startles intruders, gives an early alert and makes them visible. Makes the dark less scary by giving you good visibility.</p>
+                                <div class="chinese-text text-xs text-gray-500">为什么有效：惊吓入侵者，提供早期警报并使他们可见。通过提供良好的可见性使黑暗不那么可怕。</div>
                             </div>
                             <div>
-                                <p class="text-sm text-gray-600 mb-1"><strong>Use:</strong> Lighting up side yards when someone approaches.</p>
-                                <div class="chinese-text text-xs text-gray-500">用途：有人接近时照亮侧院。</div>
+                                <p class="text-sm text-gray-600 mb-1"><strong>Use:</strong> Lighting up side & back yards when someone approaches. Letting out the dogs, coming home at night, easy to see if triggered.</p>
+                                <div class="chinese-text text-xs text-gray-500">用途：有人接近时照亮侧院和后院。放狗、夜间回家、容易看到是否触发。</div>
                             </div>
                         </div>
                     </div>
@@ -1496,21 +1725,21 @@
                 <div class="popup-two-column">
                     <div class="space-y-4">
                         <div class="flex items-center mb-4">
-                            <i class="fas fa-dog text-green-500 text-2xl mr-3"></i>
-                            <h4 class="font-bold text-lg text-gray-800">Dogs</h4>
+                            <i class="fas fa-dog text-blue-400 text-2xl mr-3"></i>
+                            <h4 class="font-bold text-lg text-gray-800">Man's Best Friend</h4>
                         </div>
                         <div class="space-y-3">
                             <div>
-                                <p class="text-sm text-gray-600 mb-1"><strong>Definition:</strong> Pets trained or naturally inclined to alert/bark at strangers.</p>
-                                <div class="chinese-text text-xs text-gray-500">定义：训练有素或天生倾向于对陌生人警报/吠叫的宠物。</div>
+                                <p class="text-sm text-gray-600 mb-1"><strong>Definition:</strong> Pets trained or naturally inclined to alert/bark at strangers. Easy to sense a problem and is generally trusted in families.</p>
+                                <div class="chinese-text text-xs text-gray-500">定义：训练有素或天生倾向于对陌生人警报/吠叫的宠物。容易感知问题，在家庭中普遍受到信任。</div>
                             </div>
                             <div>
-                                <p class="text-sm text-gray-600 mb-1"><strong>Why it works:</strong> Noise and unpredictability deter criminals.</p>
-                                <div class="chinese-text text-xs text-gray-500">为什么有效：噪音和不可预测性威慑犯罪分子。</div>
+                                <p class="text-sm text-gray-600 mb-1"><strong>Why it works:</strong> Noise, presence and unpredictability deter criminals. May react when other events occur to be an early warning sign. Can bite.</p>
+                                <div class="chinese-text text-xs text-gray-500">为什么有效：噪音、存在和不可预测性威慑犯罪分子。当其他事件发生时可能会反应，成为早期警告信号。可以咬人。</div>
                             </div>
                             <div>
-                                <p class="text-sm text-gray-600 mb-1"><strong>Use:</strong> Warning owners of someone near the fence.</p>
-                                <div class="chinese-text text-xs text-gray-500">用途：警告业主有人靠近围栏。</div>
+                                <p class="text-sm text-gray-600 mb-1"><strong>Use:</strong> Day or Night, most dog owners consider the the "first line of defense" for any threatening event. Dogs have a reputation of being loyal and protective of their homes.</p>
+                                <div class="chinese-text text-xs text-gray-500">用途：白天或夜晚，大多数狗主人认为狗是任何威胁事件的"第一道防线"。狗以忠诚和保护家园而闻名。</div>
                             </div>
                         </div>
                     </div>
@@ -1527,21 +1756,21 @@
                 <div class="popup-two-column">
                     <div class="space-y-4">
                         <div class="flex items-center mb-4">
-                            <i class="fas fa-door-closed text-purple-500 text-2xl mr-3"></i>
-                            <h4 class="font-bold text-lg text-gray-800">Reinforced Doors & Windows</h4>
+                            <i class="fas fa-door-closed text-blue-400 text-2xl mr-3"></i>
+                            <h4 class="font-bold text-lg text-gray-800">Make It a Challenge to Break In</h4>
                         </div>
                         <div class="space-y-3">
                             <div>
-                                <p class="text-sm text-gray-600 mb-1"><strong>Definition:</strong> Stronger locks, strike plates, and shatter-resistant glass.</p>
-                                <div class="chinese-text text-xs text-gray-500">定义：更强的锁、撞击板和抗碎玻璃。</div>
+                                <p class="text-sm text-gray-600 mb-1"><strong>Definition:</strong> Stronger locks, strike plates, anti-kick doors, metal bars and shatter-resistant glass.</p>
+                                <div class="chinese-text text-xs text-gray-500">定义：更强的锁、撞击板、防踢门、金属栅栏和抗碎玻璃。</div>
                             </div>
                             <div>
-                                <p class="text-sm text-gray-600 mb-1"><strong>Why it works:</strong> Slows or stops forced entry.</p>
-                                <div class="chinese-text text-xs text-gray-500">为什么有效：减缓或阻止强行进入。</div>
+                                <p class="text-sm text-gray-600 mb-1"><strong>Why it works:</strong> Essentially barricades the entrys into the home which is a strong line of defense.</p>
+                                <div class="chinese-text text-xs text-gray-500">为什么有效：本质上是将家庭入口封锁，这是一道强有力的防线。</div>
                             </div>
                             <div>
-                                <p class="text-sm text-gray-600 mb-1"><strong>Use:</strong> Resisting a break-in attempt at the front door.</p>
-                                <div class="chinese-text text-xs text-gray-500">用途：抵御前门的破门企图。</div>
+                                <p class="text-sm text-gray-600 mb-1"><strong>Use:</strong> This is primarily seen in cities and lower income areas as the are more functional rather than asthetic. Getting through these type of barricades poses a significant challenge for intruders.</p>
+                                <div class="chinese-text text-xs text-gray-500">用途：这主要在城市和低收入地区看到，因为它们更注重功能而非美观。穿过这些类型的障碍对入侵者构成重大挑战。</div>
                             </div>
                         </div>
                     </div>
@@ -1558,21 +1787,21 @@
                 <div class="popup-two-column">
                     <div class="space-y-4">
                         <div class="flex items-center mb-4">
-                            <i class="fas fa-fence text-indigo-500 text-2xl mr-3"></i>
+                            <i class="fas fa-xmarks-lines text-blue-400 text-2xl mr-3"></i>
                             <h4 class="font-bold text-lg text-gray-800">Fences & Gates</h4>
                         </div>
                         <div class="space-y-3">
                             <div>
-                                <p class="text-sm text-gray-600 mb-1"><strong>Definition:</strong> Physical barriers around property.</p>
-                                <div class="chinese-text text-xs text-gray-500">定义：房产周围的物理屏障。</div>
+                                <p class="text-sm text-gray-600 mb-1"><strong>Definition:</strong> Physical barriers around property. Seperates your home and property from the public. Offers a certain amount of privacy.</p>
+                                <div class="chinese-text text-xs text-gray-500">定义：房产周围的物理屏障。将您的家和财产与公众分开。提供一定程度的隐私。</div>
                             </div>
                             <div>
-                                <p class="text-sm text-gray-600 mb-1"><strong>Why it works:</strong> Creates extra effort and delay for entry.</p>
-                                <div class="chinese-text text-xs text-gray-500">为什么有效：为进入创造额外努力和延迟。</div>
+                                <p class="text-sm text-gray-600 mb-1"><strong>Why it works:</strong>Jumping over a fence can be difficult and bring unwanted attention to a criminal. Also, it can hinder escape for a criminal. This also can shield valuables and daily activites from the public view.</p>
+                                <div class="chinese-text text-xs text-gray-500">为什么有效：跳过围栏可能很困难，会给罪犯带来不必要的注意。此外，它可以阻碍罪犯逃跑。这也可以将贵重物品和日常活动从公众视野中屏蔽。</div>
                             </div>
                             <div>
-                                <p class="text-sm text-gray-600 mb-1"><strong>Use:</strong> Keeping trespassers out of backyards.</p>
-                                <div class="chinese-text text-xs text-gray-500">用途：防止闯入者进入后院。</div>
+                                <p class="text-sm text-gray-600 mb-1"><strong>Use:</strong> Keeping trespassers away from home with distance and barriers. Have a more funneled access point (gate) to allow people to enter from. Depending on the fence type keeps wild animals out and pets and kids in.</p>
+                                <div class="chinese-text text-xs text-gray-500">用途：通过距离和障碍物让擅闯者远离家园。有一个更集中的接入点（大门）供人们进入。根据围栏类型，可以阻挡野生动物，并将宠物和孩子圈在里面。</div>
                             </div>
                         </div>
                     </div>
@@ -1583,27 +1812,27 @@
                 `
             },
             smartlocks: {
-                title: "Smart Locks",
-                titleChinese: "智能锁",
+                title: "Locks & Smart Locks",
+                titleChinese: "锁具和智能锁",
                 content: `
                 <div class="popup-two-column">
                     <div class="space-y-4">
                         <div class="flex items-center mb-4">
-                            <i class="fas fa-lock text-teal-500 text-2xl mr-3"></i>
-                            <h4 class="font-bold text-lg text-gray-800">Smart Locks</h4>
+                            <i class="fas fa-lock text-blue-400 text-2xl mr-3"></i>
+                            <h4 class="font-bold text-lg text-gray-800">Bolted Defense</h4>
                         </div>
                         <div class="space-y-3">
                             <div>
-                                <p class="text-sm text-gray-600 mb-1"><strong>Definition:</strong> Keyless entry with PIN, biometrics, or remote access.</p>
-                                <div class="chinese-text text-xs text-gray-500">定义：带PIN、生物识别或远程访问的无钥匙进入。</div>
+                                <p class="text-sm text-gray-600 mb-1"><strong>Definition:</strong>Mechanical or Keyless entry with PIN, biometrics, or remote access. Secures doors, garages, sheds, trailers. Primitive but instinctual.</p>
+                                <div class="chinese-text text-xs text-gray-500">定义：机械或无钥匙进入，带PIN、生物识别或远程访问。保护门、车库、棚屋、拖车。原始但本能。</div>
                             </div>
                             <div>
-                                <p class="text-sm text-gray-600 mb-1"><strong>Why it works:</strong> Harder to pick and easier to control access.</p>
-                                <div class="chinese-text text-xs text-gray-500">为什么有效：更难撬锁且更易控制访问。</div>
+                                <p class="text-sm text-gray-600 mb-1"><strong>Why it works:</strong> Mechanical locks are essentially the percieved natural defense for intrustion. You also have "keys" to your home. This could be shared with only whom you trust, providing a strong mental understanding that entry is forbidden without your consent. Automated locks are harder to pick and easier to control access but can be seen as possible inferior to traditional locks.</p>
+                                <div class="chinese-text text-xs text-gray-500">为什么有效：机械锁本质上是入侵的感知自然防御。您还有家的"钥匙"。这只能与您信任的人分享，提供强烈的心理理解，即未经您同意禁止进入。自动锁更难撬锁，更容易控制访问，但可能被视为不如传统锁。</div>
                             </div>
                             <div>
-                                <p class="text-sm text-gray-600 mb-1"><strong>Use:</strong> Letting in a delivery while away.</p>
-                                <div class="chinese-text text-xs text-gray-500">用途：不在家时让快递进入。</div>
+                                <p class="text-sm text-gray-600 mb-1"><strong>Use:</strong> The doorway is an entry point to every home and room. It's also common for bathrooms and bedrooms and basements to have a lock as a form of access control. People in less secure neighborhoods may have more than 1 lock on their doors.</p>
+                                <div class="chinese-text text-xs text-gray-500">用途：门道是每个家和房间的入口点。浴室、卧室和地下室有锁作为访问控制形式也很常见。在不太安全的社区，人们的门上可能有不止一把锁。</div>
                             </div>
                         </div>
                     </div>
@@ -1620,21 +1849,21 @@
                 <div class="popup-two-column">
                     <div class="space-y-4">
                         <div class="flex items-center mb-4">
-                            <i class="fas fa-window-maximize text-pink-500 text-2xl mr-3"></i>
-                            <h4 class="font-bold text-lg text-gray-800">Window Security Film</h4>
+                            <i class="fas fa-window-maximize text-blue-400 text-2xl mr-3"></i>
+                            <h4 class="font-bold text-lg text-gray-800">Making Glass Stronger</h4>
                         </div>
                         <div class="space-y-3">
                             <div>
-                                <p class="text-sm text-gray-600 mb-1"><strong>Definition:</strong> Plastic film that strengthens glass.</p>
-                                <div class="chinese-text text-xs text-gray-500">定义：加强玻璃的塑料薄膜。</div>
+                                <p class="text-sm text-gray-600 mb-1"><strong>Definition:</strong> Plastic film that strengthens glass and makes it more shatter proof. This is rising in the US as a cheap and effective to potentially stop windows from being broken so easily.</p>
+                                <div class="chinese-text text-xs text-gray-500">定义：加强玻璃并使其更防破碎的塑料薄膜。这在美国兴起，作为一种便宜有效的方法，可能阻止窗户被轻易破坏。</div>
                             </div>
                             <div>
-                                <p class="text-sm text-gray-600 mb-1"><strong>Why it works:</strong> Prevents quick smash-and-grab.</p>
-                                <div class="chinese-text text-xs text-gray-500">为什么有效：防止快速砸抢。</div>
+                                <p class="text-sm text-gray-600 mb-1"><strong>Why it works:</strong> Prevents quick smash-and-grab. Normally breaking glass can alert people to a crime. So if someone is to break a window it is generally meant for a very quick robbery, this defends against this type of intrusion.</p>
+                                <div class="chinese-text text-xs text-gray-500">为什么有效：防止快速砸抢。通常破碎玻璃可以提醒人们有犯罪发生。所以如果有人要破窗，通常是为了非常快速的抢劫，这可以防御这种类型的入侵。</div>
                             </div>
                             <div>
-                                <p class="text-sm text-gray-600 mb-1"><strong>Use:</strong> Stopping entry through side windows.</p>
-                                <div class="chinese-text text-xs text-gray-500">用途：阻止从侧窗进入。</div>
+                                <p class="text-sm text-gray-600 mb-1"><strong>Use:</strong> Stopping entry through side windows and glass doors (usually in the back of house) and makes windows not as easy to break through as before.</p>
+                                <div class="chinese-text text-xs text-gray-500">用途：阻止从侧窗和玻璃门（通常在房屋后面）进入，使窗户不像以前那样容易被破坏。</div>
                             </div>
                         </div>
                     </div>
@@ -1643,7 +1872,132 @@
                 </div>
             </div> 
                 `
-            }
+            },
+            phone: {
+                title: "Phone Priority",
+                titleChinese: "电话优先",
+                content: `
+                <div class="popup-two-column">
+                    <div class="space-y-4">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-phone text-blue-400 text-2xl mr-3"></i>
+                            <h4 class="font-bold text-lg text-gray-800">The Line of Communication</h4>
+                        </div>
+                        <div class="space-y-3">
+                            <div>
+                                <p class="text-sm text-gray-600 mb-1"><strong>Definition:</strong> A direct line to you and the outside world. Phone calls, messaging and community apps keep you aware but also equipped to contact help at any moment.</p>
+                                <div class="chinese-text text-xs text-gray-500">定义：连接您和外界的直接线路。电话、消息和社区应用程序让您保持警觉，同时也让您能够随时联系帮助。</div>
+                            </div>
+                            <div>
+                                <p class="text-sm text-gray-600 mb-1"><strong>Why it works:</strong> Instantly can connect you to law enforcement, family & friends.</p>
+                                <div class="chinese-text text-xs text-gray-500">为什么有效：可以立即连接您与执法部门、家人和朋友。</div>
+                            </div>
+                            <div>
+                                <p class="text-sm text-gray-600 mb-1"><strong>Use:</strong> Calling "911" if someone is trying to enter your home. This also is where security is prioritized with apps and other devices.</p>
+                                <div class="chinese-text text-xs text-gray-500">用途：如果有人试图进入您的家，拨打"911"。这也是通过应用程序和其他设备优先考虑安全的地方。</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex justify-center">
+                    <img src="images/phone-security.png" alt="Phone Security" class="popup-image">
+                </div>
+            </div> 
+                `
+            },
+            neighbors: {
+                title: "Neighbor Relationship",
+                titleChinese: "邻里关系",
+                content: `
+                <div class="popup-two-column">
+                    <div class="space-y-4">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-users text-blue-400 text-2xl mr-3"></i>
+                            <h4 class="font-bold text-lg text-gray-800">People Rely on Their Neighbors</h4>
+                        </div>
+                        <div class="space-y-3">
+                            <div>
+                                <p class="text-sm text-gray-600 mb-1"><strong>Definition:</strong> Relying on close neighbors to provide an extra pair of eyes on your home and keeps you up to date on your area. </p>
+                                <div class="chinese-text text-xs text-gray-500">定义：依靠近邻为您的家提供额外的眼睛，并让您了解您所在地区的最新情况。</div>
+                            </div>
+                            <div>
+                                <p class="text-sm text-gray-600 mb-1"><strong>Why it works:</strong> A trusted neighbor can provide you updates on your home and also can watch your home while away.</p>
+                                <div class="chinese-text text-xs text-gray-500">为什么有效：值得信赖的邻居可以为您提供家庭情况的更新，也可以在您外出时看护您的家。</div>
+                            </div>
+                            <div>
+                                <p class="text-sm text-gray-600 mb-1"><strong>Use:</strong> Watching over your home while away. Keeps you up to date on any activities. General high trust. Close neighbors may have access to your home.</p>
+                                <div class="chinese-text text-xs text-gray-500">用途：外出时看护您的家。让您了解任何活动的最新情况。普遍高度信任。近邻可能有进入您家的权限。</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex justify-center">
+                    <img src="images/friendly-neighbors.png" alt="Friendly Neighbors" class="popup-image">
+                </div>
+            </div> 
+                `
+            },
+            weapons: {
+                title: "Weapons",
+                titleChinese: "武器",
+                content: `
+                <div class="popup-two-column">
+                    <div class="space-y-4">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-shield text-blue-400 text-2xl mr-3"></i>
+                            <h4 class="font-bold text-lg text-gray-800">Ready to Go Anytime</h4>
+                        </div>
+                        <div class="space-y-3">
+                            <div>
+                                <p class="text-sm text-gray-600 mb-1"><strong>Definition:</strong> For non-gun owners, having a weapon such as a bat or knife is easy to grab places is common. This is scene as the last line of defense in the event of an intrusion.</p>
+                                <div class="chinese-text text-xs text-gray-500">定义：对于非枪支拥有者，拥有球棒或刀子等武器放在容易抓取的地方是常见的。这被视为入侵事件中的最后一道防线。</div>
+                            </div>
+                            <div>
+                                <p class="text-sm text-gray-600 mb-1"><strong>Why it works:</strong> You can equip a common household object to utilize as a weapon against a criminal. It allows you to not be seperated from protecting yourself if needed.</p>
+                                <div class="chinese-text text-xs text-gray-500">为什么有效：您可以配备常见的家用物品作为对付罪犯的武器。如果需要，它可以让您不与保护自己分离。</div>
+                            </div>
+                            <div>
+                                <p class="text-sm text-gray-600 mb-1"><strong>Use:</strong> Usually found next to beds, in closets, or in hidden places. If you suspect a dangerous event taking place you may grab this to either investigate or to secure yourself until help arrives.</p>
+                                <div class="chinese-text text-xs text-gray-500">用途：通常在床边、衣柜里或隐蔽的地方找到。如果您怀疑发生危险事件，您可能会抓取它来调查或保护自己直到帮助到达。</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex justify-center">
+                    <img src="images/bed-bat.png" alt="Bed Bat" class="popup-image">
+                </div>
+            </div> 
+                `
+            },
+            guns: {
+                title: "Gun Security",
+                titleChinese: "枪支安全",
+                content: `
+                <div class="popup-two-column">
+                    <div class="space-y-4">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-gun text-blue-400 text-2xl mr-3"></i>
+                            <h4 class="font-bold text-lg text-gray-800">The Final & Last Defense</h4>
+                        </div>
+                        <div class="space-y-3">
+                            <div>
+                                <p class="text-sm text-gray-600 mb-1"><strong>Definition:</strong> Meant to be the ultimate peace of mind in the event someone is threatening your safety. Generally gun owners are trained and prepared to use them in the event of an emergency.</p>
+                                <div class="chinese-text text-xs text-gray-500">定义：旨在在有人威胁您的安全时提供终极安心感。通常枪支拥有者经过训练并准备在紧急情况下使用它们。</div>
+                            </div>
+                            <div>
+                                <p class="text-sm text-gray-600 mb-1"><strong>Why it works:</strong> Gun owners don't generally share if they own guns, they want the element of surprise to be used while understanding that a situation can be fight or die. A family with a gun will be aware of the gun and possibly trained to use it correctly. Not knowing if someone has a gun in the home is a real threat to criminals since someone breaking into your home gives you the right to shoot them (Dependent on laws).</p>
+                                <div class="chinese-text text-xs text-gray-500">为什么有效：枪支拥有者通常不会透露他们拥有枪支，他们希望使用突然袭击的元素，同时理解情况可能是战斗或死亡。拥有枪支的家庭会意识到枪支的存在，并可能受过正确使用的训练。不知道某人家中是否有枪对罪犯来说是真正的威胁，因为有人闯入您的家给您开枪射击他们的权利（取决于法律）。</div>
+                            </div>
+                            <div>
+                                <p class="text-sm text-gray-600 mb-1"><strong>Use:</strong> You wake up with 3 people breaking into your house on the ground floor. You rush to grab the gun and potentially position yourself ready to fire with intent to harm until they leave, police arrive, or you announce that you have a gun to make them run.</p>
+                                <div class="chinese-text text-xs text-gray-500">用途：您醒来发现有3个人在一楼闯入您的房子。您急忙抓取枪支，并可能让自己准备好开火，意图伤害，直到他们离开、警察到达，或者您宣布您有枪让他们逃跑。</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex justify-center">
+                    <img src="images/gun-owner.png" alt="Gun Owner" class="popup-image">
+                </div>
+            </div> 
+                `
+            },
+            
         };
 
         // Function to open security feature pop-up
@@ -1714,6 +2068,7 @@
     </script>
 </body>
 </html>
+
 
 
 
